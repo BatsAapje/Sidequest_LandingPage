@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Mobile scroll-triggered hover animations
-  const mobileQuery = window.matchMedia('(max-width: 768px)');
+  const mobileQuery = window.matchMedia('(max-width: 1024px)');
   let mobileObserver = null;
 
   function setupMobileAnimations() {

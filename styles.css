@@ -2434,6 +2434,54 @@ a {
   .status-badge {
     margin-top: 40px;
   }
+
+  /* Scroll-triggered hover animations for tablet */
+  .offer-card.is-hovered {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+  }
+
+  .offer-card.is-hovered .illus-card--session {
+    transform: translateY(0);
+  }
+
+  .offer-card.is-hovered .illus-card--brief {
+    transform: translateY(0);
+  }
+
+  .offer-card.is-hovered .illus-card--game {
+    transform: translateY(16px) rotate(3deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--1 {
+    transform: translateX(-50%) rotate(-30deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--2 {
+    transform: translateX(-50%) rotate(-14deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--3 {
+    transform: translateX(-50%) rotate(0deg) translateY(-4px);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--4 {
+    transform: translateX(-50%) rotate(14deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--5 {
+    transform: translateX(-50%) rotate(30deg);
+  }
+
+  .testimonial-card.is-hovered {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 20px 50px rgba(113, 113, 211, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .testimonial-card.is-hovered:nth-child(even) {
+    transform: translateY(-8px) rotate(1deg);
+  }
 }
 
 @media (min-width: 769px) {
