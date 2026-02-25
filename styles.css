@@ -69,6 +69,72 @@ a {
   transform: translateY(-1px);
 }
 
+/* ===== Mask Animation Wrapper ===== */
+.btn-mask-wrap {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--black);
+}
+
+.btn-mask-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.btn-mask-wrap .btn-nav {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  background: var(--black);
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  -webkit-animation: maskOut 0.7s steps(22) forwards;
+  animation: maskOut 0.7s steps(22) forwards;
+}
+
+.btn-mask-wrap .btn-nav:hover {
+  -webkit-animation: maskIn 0.7s steps(22) forwards;
+  animation: maskIn 0.7s steps(22) forwards;
+  transform: none;
+}
+
+@keyframes maskIn {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes maskOut {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
 /* ===== CTA Bar ===== */
 .cta-bar {
   display: inline-flex;
@@ -725,6 +791,14 @@ a {
   max-width: 800px;
   margin: 0 auto;
   text-wrap: balance;
+}
+
+.mobile-br {
+  display: none;
+}
+
+.mobile-block {
+  display: inline;
 }
 
 .offers-title em {
@@ -1600,6 +1674,10 @@ a {
   padding: 8px 20px;
 }
 
+.testimonial-card--placeholder .btn-mask-text {
+  font-size: 0.82rem;
+}
+
 /* ===== FAQ ===== */
 .faq {
   padding: 100px 40px 120px;
@@ -2100,6 +2178,10 @@ a {
     padding: 8px 18px;
   }
 
+  .btn-mask-text {
+    font-size: 0.82rem;
+  }
+
   .hero {
     padding: 110px 20px 80px;
     min-height: auto;
@@ -2200,6 +2282,19 @@ a {
     margin-bottom: 40px;
   }
 
+  .mobile-br {
+    display: block;
+  }
+
+  .mobile-block {
+    display: block;
+  }
+
+  .offers-title,
+  .testimonials-title {
+    text-wrap: initial;
+  }
+
   .offers-grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -2238,7 +2333,7 @@ a {
   .benefits-title,
   .testimonials-title,
   .faq-title {
-    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    font-size: clamp(2.6rem, 9vw, 3.6rem);
   }
 
   .contact__title {
@@ -2262,6 +2357,54 @@ a {
 
   .try-me {
     left: calc(50% + 110px);
+  }
+
+  /* Scroll-triggered hover animations for mobile */
+  .offer-card.is-hovered {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+  }
+
+  .offer-card.is-hovered .illus-card--session {
+    transform: translateY(0);
+  }
+
+  .offer-card.is-hovered .illus-card--brief {
+    transform: translateY(0);
+  }
+
+  .offer-card.is-hovered .illus-card--game {
+    transform: translateY(16px) rotate(3deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--1 {
+    transform: translateX(-50%) rotate(-30deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--2 {
+    transform: translateX(-50%) rotate(-14deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--3 {
+    transform: translateX(-50%) rotate(0deg) translateY(-4px);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--4 {
+    transform: translateX(-50%) rotate(14deg);
+  }
+
+  .offer-card.is-hovered .illus-fan__card--5 {
+    transform: translateX(-50%) rotate(30deg);
+  }
+
+  .testimonial-card.is-hovered {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 20px 50px rgba(113, 113, 211, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .testimonial-card.is-hovered:nth-child(even) {
+    transform: translateY(-8px) rotate(1deg);
   }
 }
 

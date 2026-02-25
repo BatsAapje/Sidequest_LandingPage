@@ -120,6 +120,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile scroll-triggered hover animations
+  const mobileQuery = window.matchMedia('(max-width: 768px)');
+  let mobileObserver = null;
+
+  function setupMobileAnimations() {
+    if (mobileQuery.matches && !mobileObserver) {
+      const animatedCards = document.querySelectorAll('.offer-card, .testimonial-card');
+      mobileObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-hovered');
+          } else {
+            entry.target.classList.remove('is-hovered');
+          }
+        });
+      }, { threshold: 0.4, rootMargin: '-35% 0px -35% 0px' });
+      animatedCards.forEach(card => mobileObserver.observe(card));
+    } else if (!mobileQuery.matches && mobileObserver) {
+      mobileObserver.disconnect();
+      mobileObserver = null;
+      document.querySelectorAll('.is-hovered').forEach(el => el.classList.remove('is-hovered'));
+    }
+  }
+
+  setupMobileAnimations();
+  mobileQuery.addEventListener('change', setupMobileAnimations);
+
   // FAQ accordion
   document.querySelectorAll('.faq-item__trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
