@@ -99,17 +99,17 @@ a {
   border: none;
   border-radius: 0;
   background: var(--black);
-  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
-  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
-  -webkit-mask-size: 2300% 100%;
-  mask-size: 2300% 100%;
-  -webkit-animation: maskOut 0.7s steps(22) forwards;
-  animation: maskOut 0.7s steps(22) forwards;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+  -webkit-animation: maskOut 0.7s steps(29) forwards;
+  animation: maskOut 0.7s steps(29) forwards;
 }
 
 .btn-mask-wrap .btn-nav:hover {
-  -webkit-animation: maskIn 0.7s steps(22) forwards;
-  animation: maskIn 0.7s steps(22) forwards;
+  -webkit-animation: maskIn 0.7s steps(29) forwards;
+  animation: maskIn 0.7s steps(29) forwards;
   transform: none;
 }
 
