@@ -413,6 +413,19 @@ a {
   overflow: hidden;
 }
 
+.hero__noise {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: overlay;
+  filter: url('#noise') contrast(200%);
+  background: white;
+}
+
 .hero__bg::before {
   content: '';
   position: absolute;
@@ -1818,6 +1831,19 @@ a {
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+.contact__noise {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: overlay;
+  filter: url('#noise') contrast(200%);
+  background: white;
 }
 
 .contact__bg::before {
