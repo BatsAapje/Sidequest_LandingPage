@@ -13,8 +13,8 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
+  <header class="floating-header" id="floating-header">
+    <nav class="floating-nav">
       <a href="/" class="nav-logo">
         <img src="assets/logo.svg" alt="Sidequest" />
       </a>
@@ -24,12 +24,28 @@
         <a href="#testimonials" class="nav-link"><span>Testimonials</span></a>
         <a href="#faq" class="nav-link"><span>FAQ</span></a>
       </div>
-      <div class="btn-mask-wrap">
-        <span class="btn-mask-text">Get in touch</span>
-        <a href="#contact" class="btn btn-nav">Get in touch</a>
+      <div class="nav-actions">
+        <div class="btn-mask-wrap">
+          <span class="btn-mask-text">Get in touch</span>
+          <a href="#contact" class="btn btn-nav">Get in touch</a>
+        </div>
+        <button class="btn-menu" id="menu-toggle" aria-label="Open menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <line x1="2" y1="4" x2="14" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="12" x2="14" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#offers">What we offer</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a class="mobile-cta" href="#contact">Get in touch</a>
     </div>
-  </nav>
+  </header>
 
   <!-- Hero -->
   <section class="hero">

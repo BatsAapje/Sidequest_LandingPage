@@ -65,17 +65,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Navbar: hide after scrolling past hero
-  const nav = document.querySelector('.nav');
+  const nav = document.getElementById('floating-header');
   const hero = document.querySelector('.hero');
 
   if (nav && hero) {
     window.addEventListener('scroll', () => {
       const heroBottom = hero.offsetTop + hero.offsetHeight;
       if (window.scrollY > heroBottom - 100) {
-        nav.classList.add('nav--hidden');
+        nav.classList.add('floating-header--hidden');
       } else {
-        nav.classList.remove('nav--hidden');
+        nav.classList.remove('floating-header--hidden');
       }
+    });
+  }
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
   }
 
