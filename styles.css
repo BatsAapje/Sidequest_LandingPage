@@ -922,6 +922,32 @@ a {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
 }
 
+.offer-card__link {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--purple);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.offer-card__link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.offer-card__link:hover {
+  background: var(--purple-dark);
+  transform: scale(1.1);
+}
+
 .offer-card__icon {
   width: 20px;
   height: 20px;

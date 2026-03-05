@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidequest, Scrum Workshop for Teams</title>
+  <meta name="description" content="A gamified Scrum escape room workshop where your team takes on real Scrum challenges under time pressure. Half a day, fully immersive, zero slides.">
+  <link rel="icon" type="image/svg+xml" href="assets/Siedquest_Favicon_Purple.svg">
+  <link rel="stylesheet" href="scrum-workshop.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Sans:wght@600;700&family=Playfair+Display:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SVG clip definitions (hidden) -->
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <clipPath id="folder-clip" clipPathUnits="objectBoundingBox">
+        <!-- Folder shape: rounded tab at top-left with slope, rounded body -->
+        <path d="
+          M 0.04 0
+          L 0.28 0
+          Q 0.32 0, 0.35 0.04
+          L 0.38 0.08
+          Q 0.40 0.10, 0.44 0.10
+          L 0.94 0.10
+          Q 1.0 0.10, 1.0 0.16
+          L 1.0 0.94
+          Q 1.0 1.0, 0.94 1.0
+          L 0.06 1.0
+          Q 0.0 1.0, 0.0 0.94
+          L 0.0 0.04
+          Q 0.0 0.0, 0.04 0.0
+          Z
+        "/>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <!-- Navigation -->
+  <header class="floating-header" id="floating-header">
+    <nav class="floating-nav">
+      <a href="/" class="nav-logo">
+        <img src="assets/logo.svg" alt="Sidequest" />
+      </a>
+      <div class="nav-links">
+        <a href="#how" class="nav-link"><span data-i18n="nav.how">How it works</span></a>
+        <a href="#why" class="nav-link"><span data-i18n="nav.why">Why this</span></a>
+        <a href="#signup" class="nav-link"><span data-i18n="nav.signup">Sign up</span></a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switcher" id="lang-switcher" role="listbox" aria-label="Switch language">
+          <span class="lang-flag lang-flag--active" data-lang="en" data-flag="gb">
+            <svg viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" stroke-width="3.6"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
+          </span>
+          <div class="lang-switcher__tray">
+            <span class="lang-flag" data-lang="en" data-flag="us">
+              <svg viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#B22234"/><rect y="2.31" width="60" height="2.31" fill="#fff"/><rect y="6.92" width="60" height="2.31" fill="#fff"/><rect y="11.54" width="60" height="2.31" fill="#fff"/><rect y="16.15" width="60" height="2.31" fill="#fff"/><rect y="20.77" width="60" height="2.31" fill="#fff"/><rect y="25.38" width="60" height="2.31" fill="#fff"/><rect width="24" height="16.15" fill="#3C3B6E"/></svg>
+            </span>
+            <span class="lang-flag" data-lang="nl" data-flag="nl">
+              <svg viewBox="0 0 9 6" preserveAspectRatio="none"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></svg>
+            </span>
+          </div>
+        </div>
+        <div class="btn-mask-wrap">
+          <span class="btn-mask-text" data-i18n="nav.cta">Sign up</span>
+          <a href="#signup" class="btn btn-nav" data-i18n="nav.cta">Sign up</a>
+        </div>
+        <button class="btn-menu" id="menu-toggle" aria-label="Open menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <line x1="2" y1="4" x2="14" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="12" x2="14" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#why" data-i18n="nav.why">Why this</a>
+      <a href="#signup" data-i18n="nav.signup">Sign up</a>
+      <div class="mobile-menu__lang">
+        <div class="lang-switcher" id="lang-switcher-mobile" role="listbox" aria-label="Switch language">
+          <span class="lang-flag lang-flag--active" data-lang="en" data-flag="gb">
+            <svg viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" stroke-width="3.6"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
+          </span>
+          <div class="lang-switcher__tray">
+            <span class="lang-flag" data-lang="en" data-flag="us">
+              <svg viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#B22234"/><rect y="2.31" width="60" height="2.31" fill="#fff"/><rect y="6.92" width="60" height="2.31" fill="#fff"/><rect y="11.54" width="60" height="2.31" fill="#fff"/><rect y="16.15" width="60" height="2.31" fill="#fff"/><rect y="20.77" width="60" height="2.31" fill="#fff"/><rect y="25.38" width="60" height="2.31" fill="#fff"/><rect width="24" height="16.15" fill="#3C3B6E"/></svg>
+            </span>
+            <span class="lang-flag" data-lang="nl" data-flag="nl">
+              <svg viewBox="0 0 9 6" preserveAspectRatio="none"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="sw-hero">
+    <div class="sw-hero__bg">
+      <div class="sw-hero__noise"></div>
+      <div class="sw-hero__grad sw-hero__grad--1"></div>
+      <div class="sw-hero__grad sw-hero__grad--2"></div>
+      <div class="sw-hero__grad sw-hero__grad--3"></div>
+      <div class="sw-hero__grad sw-hero__grad--4"></div>
+      <div class="sw-hero__grad sw-hero__grad--5"></div>
+      <div class="sw-hero__grad sw-hero__grad--6"></div>
+    </div>
+    <div class="sw-hero__bubble sw-hero__bubble--1"></div>
+    <div class="sw-hero__bubble sw-hero__bubble--2"></div>
+    <div class="sw-hero__bubble sw-hero__bubble--3"></div>
+    <div class="sw-hero__bubble sw-hero__bubble--4"></div>
+    <div class="sw-hero__bubble sw-hero__bubble--5"></div>
+    <div class="sw-hero__bubble sw-hero__bubble--6"></div>
+    <div class="sw-hero-grid-bg"></div>
+
+    <!-- Frosted glass folder card stack, bottom left -->
+    <div class="sw-hero-folder-stack" aria-hidden="true">
+      <!-- Back folder (stacked behind) -->
+      <div class="sw-hero-folder-back"></div>
+      <!-- Jira icon (on top, right) -->
+      <div class="sw-hero-jira-icon">
+        <svg viewBox="0 0 256 256" width="30" height="30">
+          <defs>
+            <linearGradient id="jiraGradA" x1="98.03%" y1="0.22%" x2="58.17%" y2="40.08%">
+              <stop offset="18%" stop-color="#0052CC"/>
+              <stop offset="100%" stop-color="#2684FF"/>
+            </linearGradient>
+            <linearGradient id="jiraGradB" x1="100.17%" y1="0.18%" x2="55.8%" y2="44.42%">
+              <stop offset="18%" stop-color="#0052CC"/>
+              <stop offset="100%" stop-color="#2684FF"/>
+            </linearGradient>
+          </defs>
+          <path d="M244.658 0H121.707a55.502 55.502 0 0 0 55.502 55.502h22.649V77.37c.02 30.625 24.84 55.447 55.5 55.502V11.6c0-6.4-5.2-11.6-11.7-11.6z" fill="#2684FF"/>
+          <path d="M183.822 61.262H60.872c.019 30.625 24.838 55.443 55.5 55.502h22.649v21.865c.019 30.628 24.84 55.45 55.502 55.502V72.863c0-6.403-5.196-11.601-11.701-11.601z" fill="url(#jiraGradA)"/>
+          <path d="M122.951 122.489H0c0 30.653 24.837 55.502 55.502 55.502h22.72v21.867c.02 30.597 24.798 55.426 55.396 55.502V134.09c0-6.402-5.198-11.601-11.667-11.601z" fill="url(#jiraGradB)"/>
+        </svg>
+      </div>
+      <!-- Front folder -->
+      <div class="sw-hero-folder">
+        <div class="sw-hero-folder__tab"></div>
+        <div class="sw-hero-folder__body">
+          <span class="sw-hero-folder__title">Sprint</span>
+          <div class="sw-hero-folder__items">
+            <div class="sw-hero-folder__item">
+              <span class="sw-hero-folder__check sw-hero-folder__check--done">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="sw-hero-folder__label sw-hero-folder__label--done">Define user stories</span>
+            </div>
+            <div class="sw-hero-folder__item">
+              <span class="sw-hero-folder__check sw-hero-folder__check--done">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="sw-hero-folder__label sw-hero-folder__label--done">Assign Scrum roles</span>
+            </div>
+            <div class="sw-hero-folder__item">
+              <span class="sw-hero-folder__check"></span>
+              <span class="sw-hero-folder__label">Run first sprint</span>
+            </div>
+            <div class="sw-hero-folder__item">
+              <span class="sw-hero-folder__check"></span>
+              <span class="sw-hero-folder__label">Sprint retrospective</span>
+            </div>
+          </div>
+          <div class="sw-hero-folder__progress">
+            <div class="sw-hero-folder__progress-bar" style="width: 50%"></div>
+          </div>
+          <span class="sw-hero-folder__progress-label">2 of 4 completed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dice decoration — top left (3D interactive) -->
+    <div class="sw-hero-dice" id="dice-container" aria-hidden="true"></div>
+
+    <!-- Tool icons — top left cluster (hidden for now) -->
+    <div class="sw-hero-tools" aria-hidden="true" style="display: none;">
+      <div class="sw-hero-tools__icon sw-hero-tools__icon--azure" title="Azure DevOps">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+          <path d="M2 5.5L7.5 3v14.5L2 19.5V5.5z" fill="#0078D4"/>
+          <path d="M22 3L7.5 3v14.5L15 21l7-2.5V3z" fill="#0078D4" opacity="0.7"/>
+          <path d="M7.5 3L15 5.5V21l-7.5-3.5V3z" fill="#005BA1"/>
+        </svg>
+      </div>
+      <div class="sw-hero-tools__icon sw-hero-tools__icon--slack" title="Slack">
+        <svg viewBox="0 0 24 24" width="28" height="28">
+          <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z" fill="#E01E5A"/>
+          <path d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z" fill="#36C5F0"/>
+          <path d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312z" fill="#2EB67D"/>
+          <path d="M15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" fill="#ECB22E"/>
+        </svg>
+      </div>
+      <div class="sw-hero-tools__icon sw-hero-tools__icon--trello" title="Trello">
+        <svg viewBox="0 0 24 24" width="28" height="28">
+          <rect width="24" height="24" rx="4" fill="#0079BF"/>
+          <rect x="4" y="4" width="7" height="14" rx="1.5" fill="white"/>
+          <rect x="13" y="4" width="7" height="9" rx="1.5" fill="white"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Timer group — top right -->
+    <div class="sw-hero-timer-group" aria-hidden="true">
+      <!-- Transparent ghost card (top-left overlap) -->
+      <div class="sw-hero-timer-ghost"></div>
+      <!-- Daily Standup card (behind alarm) -->
+      <div class="sw-hero-standup">
+        <div class="sw-hero-standup__header">
+          <svg class="sw-hero-standup__icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="sw-hero-standup__title">Daily Standup</span>
+        </div>
+        <div class="sw-hero-standup__items">
+          <div class="sw-hero-standup__row">
+            <span class="sw-hero-standup__label">Participants</span>
+            <div class="sw-hero-standup__avatars">
+              <span class="sw-hero-standup__avatar" style="background:#7171d3">J</span>
+              <span class="sw-hero-standup__avatar" style="background:#77bccc">S</span>
+              <span class="sw-hero-standup__avatar" style="background:#9585e0">M</span>
+            </div>
+          </div>
+          <div class="sw-hero-standup__row">
+            <span class="sw-hero-standup__label">Time</span>
+            <span class="sw-hero-standup__value">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              09:15 - 09:30
+            </span>
+          </div>
+          <div class="sw-hero-standup__row">
+            <span class="sw-hero-standup__label">Sprint</span>
+            <span class="sw-hero-standup__value">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Sprint 2
+            </span>
+          </div>
+          <div class="sw-hero-standup__row">
+            <span class="sw-hero-standup__label">Challenges</span>
+            <span class="sw-hero-standup__value">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              2 left
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- Alarm icon (on top) -->
+      <div class="sw-hero-timer__icon">
+        <span class="sw-hero-timer__emoji">⏰</span>
+      </div>
+    </div>
+
+    <!-- Retro card, right side -->
+    <div class="sw-hero-retro" aria-hidden="true">
+      <div class="sw-hero-retro__header">
+        <svg class="sw-hero-retro__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span class="sw-hero-retro__title">Retro</span>
+      </div>
+      <div class="sw-hero-retro__items">
+        <div class="sw-hero-retro__item">
+          <span class="sw-hero-retro__dot sw-hero-retro__dot--green"></span>
+          <span>Roles made decisions faster</span>
+        </div>
+        <div class="sw-hero-retro__item">
+          <span class="sw-hero-retro__dot sw-hero-retro__dot--amber"></span>
+          <span>Time pressure was intense</span>
+        </div>
+        <div class="sw-hero-retro__item">
+          <span class="sw-hero-retro__dot sw-hero-retro__dot--blue"></span>
+          <span>Try shorter sprint cycles</span>
+        </div>
+      </div>
+      <div class="sw-hero-retro__footer">
+        <div class="sw-hero-retro__score">
+          <span class="sw-hero-retro__score-label">Team score</span>
+          <span class="sw-hero-retro__score-value">4.8</span>
+        </div>
+        <div class="sw-hero-retro__avatars">
+          <span class="sw-hero-retro__avatar" style="background:#7171d3">J</span>
+          <span class="sw-hero-retro__avatar" style="background:#77bccc">S</span>
+          <span class="sw-hero-retro__avatar" style="background:#9585e0">M</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sw-hero-content">
+      <h1 class="sw-hero-title" data-i18n="hero.title" data-i18n-html="true">A Scrum escape room teams will actually <em>learn</em> from</h1>
+      <p class="sw-hero-subtitle" data-i18n="hero.subtitle">Just half a day. Fully immersive. Zero slides.</p>
+      <a href="#signup" class="blob-btn">
+        <span class="blob-btn__text" data-i18n="hero.cta">Join as a pilot team</span>
+        <span class="blob-btn__inner">
+          <span class="blob-btn__blobs">
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+          </span>
+        </span>
+      </a>
+      <p class="sw-hero-note" data-i18n="hero.note">Limited spots available &middot; Discounted pilot rate</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="sw-how" id="how">
+    <div class="sw-how-inner">
+      <div class="sw-section-header">
+        <span class="sw-section-tag" data-i18n="how.tag">How it works</span>
+        <h2 class="sw-section-title" data-i18n="how.title" data-i18n-html="true">How a session <em>works</em></h2>
+      </div>
+      <div class="sw-kanban">
+        <div class="sw-kanban__board">
+
+          <!-- Value progress bar -->
+          <div class="sw-kanban__value-bar" aria-hidden="true">
+            <span class="sw-kanban__value-label">Value delivered</span>
+            <div class="sw-kanban__value-track">
+              <div class="sw-kanban__value-fill"></div>
+            </div>
+            <span class="sw-kanban__value-pct">0%</span>
+          </div>
+
+          <!-- "Drag and drop" hint — centered above In Progress column -->
+          <div class="sw-kanban__try-hint" aria-hidden="true">
+            <span class="sw-kanban__try-label" data-i18n="how.tryMe">drag and drop!</span>
+            <svg class="sw-kanban__try-arrow" viewBox="0 0 2 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="1" y1="0" x2="1" y2="14" stroke="var(--purple-light)" stroke-width="1.5" stroke-dasharray="4 2" stroke-linecap="round"/>
+              <path d="M-2 12 L1 18 L4 12" stroke="var(--purple-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+
+          <!-- Column: Planned -->
+          <div class="sw-kanban__col" data-column="planned">
+            <div class="sw-kanban__col-header">
+              <span class="sw-kanban__dot sw-kanban__dot--planned"></span>
+              <span class="sw-kanban__col-label" data-i18n="how.col1">Planned</span>
+              <span class="sw-kanban__col-count">3</span>
+            </div>
+            <div class="sw-kanban__cards">
+              <div class="sw-kanban__card sw-kanban__card--thread-a" data-thread="a">
+                <div class="sw-kanban__card-header">
+                  <span class="sw-kanban__card-tag" data-i18n="how.tag.a">Role Switching</span>
+                  <span class="sw-kanban__card-xp">+10 value</span>
+                </div>
+                <div class="sw-kanban__card-body">
+                  <span class="sw-kanban__card-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                  <h4 class="sw-kanban__card-title" data-i18n="how.planned.a.title">Role assignment</h4>
+                </div>
+                <p class="sw-kanban__card-desc" data-i18n="how.planned.a.desc">Your team takes on different Scrum roles. Each player becomes either a Scrum Master, Product Owner, or Developer.</p>
+              </div>
+              <div class="sw-kanban__card sw-kanban__card--thread-b" data-thread="b">
+                <div class="sw-kanban__card-header">
+                  <span class="sw-kanban__card-tag" data-i18n="how.tag.b">The Challenge</span>
+                  <span class="sw-kanban__card-xp">+10 value</span>
+                </div>
+                <div class="sw-kanban__card-body">
+                  <span class="sw-kanban__card-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                  <h4 class="sw-kanban__card-title" data-i18n="how.planned.b.title">The mission</h4>
+                </div>
+                <p class="sw-kanban__card-desc" data-i18n="how.planned.b.desc">A Scrum escape room challenge is set. Build the best possible app before time runs out.</p>
+              </div>
+              <div class="sw-kanban__card sw-kanban__card--thread-c" data-thread="c">
+                <div class="sw-kanban__card-header">
+                  <span class="sw-kanban__card-tag" data-i18n="how.tag.c">Reflection</span>
+                  <span class="sw-kanban__card-xp">+10 value</span>
+                </div>
+                <div class="sw-kanban__card-body">
+                  <span class="sw-kanban__card-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                  <h4 class="sw-kanban__card-title" data-i18n="how.planned.c.title">Observation setup</h4>
+                </div>
+                <p class="sw-kanban__card-desc" data-i18n="how.planned.c.desc">The facilitator prepares the debrief structure and key observation points.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column: In Progress -->
+          <div class="sw-kanban__col" data-column="progress">
+            <div class="sw-kanban__col-header">
+              <span class="sw-kanban__dot sw-kanban__dot--progress"></span>
+              <span class="sw-kanban__col-label" data-i18n="how.col2">In Progress</span>
+              <span class="sw-kanban__col-count">0</span>
+            </div>
+            <div class="sw-kanban__cards">
+            </div>
+          </div>
+
+          <!-- Column: Done -->
+          <div class="sw-kanban__col" data-column="done">
+            <div class="sw-kanban__col-header">
+              <span class="sw-kanban__dot sw-kanban__dot--done"></span>
+              <span class="sw-kanban__col-label" data-i18n="how.col3">Done</span>
+              <span class="sw-kanban__col-count">0</span>
+            </div>
+            <div class="sw-kanban__cards">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="sw-how-details">
+        <div class="sw-how-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="how.detail1">Half day (3-4 hours)</span>
+        </div>
+        <div class="sw-how-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span data-i18n="how.detail2">4-25 people per workshop</span>
+        </div>
+        <div class="sw-how-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="how.detail3">On-site at your office</span>
+        </div>
+        <div class="sw-how-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="how.detail4">No preparation needed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaderboard -->
+  <section class="sw-leaderboard" data-ipad-container>
+    <div class="sw-leaderboard__inner">
+      <!-- Header — translates up on scroll -->
+      <div class="sw-leaderboard__header" data-ipad-header>
+        <div class="sw-section-header">
+          <span class="sw-section-tag" data-i18n="leaderboard.tag">Leaderboard</span>
+          <h2 class="sw-section-title" data-i18n="leaderboard.title" data-i18n-html="true">Track your team's <em>performance</em></h2>
+          <p class="sw-leaderboard__subtitle" data-i18n="leaderboard.subtitle">Every team earns a score. See how you compare against other teams across companies.</p>
+        </div>
+      </div>
+
+      <!-- iPad frame — rotates/scales on scroll -->
+      <div class="sw-leaderboard__ipad" data-ipad-card>
+        <div class="sw-leaderboard__ipad-screen">
+          <div class="sw-leaderboard__table-wrap">
+            <table class="sw-leaderboard__table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Team</th>
+                  <th>Company</th>
+                  <th>Team Size</th>
+                  <th>Score</th>
+                  <th>Badge</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="sw-leaderboard__row--gold">
+                  <td><span class="sw-leaderboard__medal">🥇</span></td>
+                  <td>🦁 Sprint Masters</td>
+                  <td>Rabobank</td>
+                  <td>6</td>
+                  <td class="sw-leaderboard__table-score">94</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--purple">No Bugs</span></td>
+                </tr>
+                <tr class="sw-leaderboard__row--silver">
+                  <td><span class="sw-leaderboard__medal">🥈</span></td>
+                  <td>❄️ Backlog Heroes</td>
+                  <td>Snowflake</td>
+                  <td>5</td>
+                  <td class="sw-leaderboard__table-score">91</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--turquoise">Happy Stakeholders</span></td>
+                </tr>
+                <tr class="sw-leaderboard__row--bronze">
+                  <td><span class="sw-leaderboard__medal">🥉</span></td>
+                  <td>🛫 Retro Legends</td>
+                  <td>KLM</td>
+                  <td>4</td>
+                  <td class="sw-leaderboard__table-score">88</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--purple">Quickest MVP</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>💡 Value Hunters</td>
+                  <td>Philips</td>
+                  <td>6</td>
+                  <td class="sw-leaderboard__table-score">85</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--turquoise">No Bugs</span></td>
+                </tr>
+                <tr class="sw-leaderboard__row--you">
+                  <td>5</td>
+                  <td>⭐ Your Team</td>
+                  <td>Your Company</td>
+                  <td>4</td>
+                  <td class="sw-leaderboard__table-score">82</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--purple">First Timer</span></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>🔬 Scrum Wizards</td>
+                  <td>ASML</td>
+                  <td>5</td>
+                  <td class="sw-leaderboard__table-score">79</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--turquoise">Team Player</span></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>💳 Daily Standers</td>
+                  <td>Adyen</td>
+                  <td>3</td>
+                  <td class="sw-leaderboard__table-score">76</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--purple">Fast Delivery</span></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>🌐 Kanban Kings</td>
+                  <td>Booking.com</td>
+                  <td>5</td>
+                  <td class="sw-leaderboard__table-score">73</td>
+                  <td><span class="sw-leaderboard__badge sw-leaderboard__badge--turquoise">Good Start</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Coaches Love This -->
+  <section class="sw-why" id="why">
+    <div class="sw-why-inner">
+      <div class="sw-section-header">
+        <span class="sw-section-tag" data-i18n="why.tag">What makes this different</span>
+        <h2 class="sw-section-title" data-i18n="why.title" data-i18n-html="true">Why coaches <em>love</em> this</h2>
+      </div>
+      <div class="sw-why-grid">
+
+        <div class="sw-why-card">
+          <div class="sw-why-card__visual sw-why-card__visual--1">
+            <div class="sw-why-card__noise"></div>
+            <div class="sw-why-card__shape sw-why-card__shape--a"></div>
+            <div class="sw-why-card__shape sw-why-card__shape--b"></div>
+            <svg class="sw-why-card__icon" viewBox="0 0 24 24"><defs><mask id="gear-cutout"><rect width="24" height="24" fill="white"/><circle cx="12" cy="12" r="3" fill="black"/></mask></defs><path mask="url(#gear-cutout)" fill="currentColor" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1.08 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.08z"/></svg>
+          </div>
+          <span class="sw-why-card__tag" data-i18n="why.card1.tag">Customizable</span>
+          <h3 class="sw-why-card__title" data-i18n="why.card1.title">Tailored to your team</h3>
+          <p class="sw-why-card__desc" data-i18n="why.card1.desc">Every team is different, and so is every workshop. We adapt the challenges, scenarios, and focus areas to match your team's goals.</p>
+        </div>
+
+        <div class="sw-why-card">
+          <div class="sw-why-card__visual sw-why-card__visual--2">
+            <div class="sw-why-card__noise"></div>
+            <div class="sw-why-card__shape sw-why-card__shape--a"></div>
+            <div class="sw-why-card__shape sw-why-card__shape--b"></div>
+            <svg class="sw-why-card__icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <span class="sw-why-card__tag" data-i18n="why.card2.tag">Measurable</span>
+          <h3 class="sw-why-card__title" data-i18n="why.card2.title">Actionable steps</h3>
+          <p class="sw-why-card__desc" data-i18n="why.card2.desc">Every session produces a score and a clear set of takeaways. Teams see exactly where they excelled and where they got stuck.</p>
+        </div>
+
+        <div class="sw-why-card">
+          <div class="sw-why-card__visual sw-why-card__visual--3">
+            <div class="sw-why-card__noise"></div>
+            <div class="sw-why-card__shape sw-why-card__shape--a"></div>
+            <div class="sw-why-card__shape sw-why-card__shape--b"></div>
+            <svg class="sw-why-card__icon" viewBox="0 0 24 24"><defs><mask id="smiley-cutout"><rect width="24" height="24" fill="white"/><circle cx="9" cy="10" r="1.5" fill="black"/><circle cx="15" cy="10" r="1.5" fill="black"/><path d="M8 14.5c0 0 1.8 3 4 3s4-3 4-3" fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round"/></mask></defs><circle cx="12" cy="12" r="10" fill="currentColor" mask="url(#smiley-cutout)"/></svg>
+          </div>
+          <span class="sw-why-card__tag" data-i18n="why.card3.tag">Inclusive</span>
+          <h3 class="sw-why-card__title" data-i18n="why.card3.title">No gamers required</h3>
+          <p class="sw-why-card__desc" data-i18n="why.card3.desc">This isn't about being good at games. The workshop is designed so that everyone, from the most competitive team member to the quietest, is naturally involved and having fun.</p>
+        </div>
+
+      </div>
+      <div class="sw-why-nav">
+        <button class="sw-why-nav__btn sw-why-nav__prev" aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="sw-why-nav__btn sw-why-nav__next" aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="sw-who">
+    <div class="sw-who-inner">
+      <div class="sw-section-header">
+        <span class="sw-section-tag" data-i18n="who.tag">Who it's for</span>
+        <h2 class="sw-section-title" data-i18n="who.title" data-i18n-html="true">Built for Scrum teams and the people who <em>guide</em> them</h2>
+      </div>
+      <div class="sw-who-list">
+        <div class="sw-who-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="who.item1">Scrum Masters looking for a fresh way to energize their team</span>
+        </div>
+        <div class="sw-who-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="who.item2">Agile coaches who want a hands-on tool instead of another training deck</span>
+        </div>
+        <div class="sw-who-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="who.item3">Teams going through change, new members, new ways of working, or stuck in old patterns</span>
+        </div>
+        <div class="sw-who-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="who.item4">Organizations that want to make Scrum adoption actually stick</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="testimonials-header">
+        <span class="sw-section-tag">Testimonials</span>
+        <h2 class="testimonials-title"><span class="mobile-block">What our</span> <em>clients</em> say</h2>
+        <p class="testimonials-subtitle">Don't just take our word for it. Here's what people have to say after playing our games.</p>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__top">
+            <span class="testimonial-card__company">Snowflake</span>
+          </div>
+          <p class="testimonial-card__quote">"We were still talking about the Scrum workshop hours later. It was not only fun, but genuinely insightful. The whole team was engaged from start to finish."</p>
+          <div class="testimonial-card__author">
+            <span class="testimonial-card__name">Mitra Ahy</span>
+            <span class="testimonial-card__role">Marketing Manager</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__top">
+            <span class="testimonial-card__company">KLM</span>
+          </div>
+          <p class="testimonial-card__quote">"Sidequest their Scrum workshop was really memorable. It brought real-life examples to life in a playful and engaging way."</p>
+          <div class="testimonial-card__author">
+            <span class="testimonial-card__name">Carlijn van Gent</span>
+            <span class="testimonial-card__role">Product Owner</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-card--placeholder">
+          <div class="testimonial-card__top">
+            <span class="testimonial-card__company">You?</span>
+          </div>
+          <div class="testimonial-placeholder">
+            <div class="placeholder-line placeholder-line--full"></div>
+            <div class="placeholder-line placeholder-line--long"></div>
+            <div class="placeholder-line placeholder-line--medium"></div>
+          </div>
+          <div class="testimonial-card__author">
+            <div class="btn-mask-wrap">
+              <span class="btn-mask-text">Get in touch</span>
+              <a href="#signup" class="btn btn-nav">Get in touch</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot Offer -->
+  <section class="sw-pilot" id="signup">
+    <div class="sw-pilot__bg">
+      <div class="sw-pilot__noise"></div>
+      <div class="sw-pilot__grad sw-pilot__grad--1"></div>
+      <div class="sw-pilot__grad sw-pilot__grad--2"></div>
+      <div class="sw-pilot__grad sw-pilot__grad--3"></div>
+      <div class="sw-pilot__grad sw-pilot__grad--4"></div>
+    </div>
+    <div class="sw-pilot-inner">
+      <div class="sw-pilot__left">
+        <h2 class="sw-pilot__title" data-i18n="pilot.title" data-i18n-html="true">Be one of the first teams to <em>play</em></h2>
+        <p class="sw-pilot__body" data-i18n="pilot.body">We're in the final stage of development and looking for a few teams to pilot the workshop.</p>
+        <div class="sw-pilot__columns">
+          <div class="sw-pilot__col">
+            <h4 class="sw-pilot__col-title" data-i18n="pilot.get.title">What pilot teams get</h4>
+            <ul class="sw-pilot__list">
+              <li data-i18n="pilot.get.item1">Early access to the full workshop experience</li>
+              <li data-i18n="pilot.get.item2">Discounted pilot pricing</li>
+              <li data-i18n="pilot.get.item3">Direct input into the final version of the game</li>
+            </ul>
+          </div>
+          <div class="sw-pilot__col">
+            <h4 class="sw-pilot__col-title" data-i18n="pilot.ask.title">What we ask in return</h4>
+            <ul class="sw-pilot__list">
+              <li data-i18n="pilot.ask.item1">Honest feedback after the session</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sw-pilot__right">
+        <div class="sw-pilot__form-card">
+          <h3 class="sw-pilot__form-title" data-i18n="pilot.form.title">Sign up as a pilot team</h3>
+          <form class="sw-signup-form" action="https://formsubmit.co/jeroen@sidequest.academy" method="POST">
+            <input type="hidden" name="_subject" value="Scrum Workshop Pilot, New sign-up">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+            <div class="sw-form-row">
+              <div class="sw-form-field">
+                <label for="sw-pilot-name" class="sw-form-label sw-form-label--light" data-i18n="form.name.label">Your name</label>
+                <input type="text" id="sw-pilot-name" name="name" class="sw-form-input" data-i18n-placeholder="form.name.placeholder" placeholder="Your name" required>
+              </div>
+              <div class="sw-form-field">
+                <label for="sw-pilot-email" class="sw-form-label sw-form-label--light" data-i18n="form.email.label">Email address</label>
+                <input type="email" id="sw-pilot-email" name="email" class="sw-form-input" data-i18n-placeholder="form.email.placeholder" placeholder="you@company.com" required>
+              </div>
+            </div>
+            <div class="sw-form-row">
+              <div class="sw-form-field">
+                <label for="sw-pilot-company" class="sw-form-label sw-form-label--light" data-i18n="form.company.label">Company / organization</label>
+                <input type="text" id="sw-pilot-company" name="company" class="sw-form-input" data-i18n-placeholder="form.company.placeholder" placeholder="Company name">
+              </div>
+              <div class="sw-form-field">
+                <label for="sw-pilot-role" class="sw-form-label sw-form-label--light" data-i18n="form.role.label">Your role</label>
+                <select id="sw-pilot-role" name="role" class="sw-form-input sw-form-select" data-i18n-options="form.role.options">
+                  <option value="" disabled selected>Select your role</option>
+                  <option value="Scrum Master">Scrum Master</option>
+                  <option value="Agile Coach">Agile Coach</option>
+                  <option value="Product Owner">Product Owner</option>
+                  <option value="Developer">Developer</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="sw-form-field">
+              <label for="sw-pilot-teamsize" class="sw-form-label sw-form-label--light" data-i18n="form.teamsize.label">Team size</label>
+              <select id="sw-pilot-teamsize" name="team_size" class="sw-form-input sw-form-select" data-i18n-options="form.teamsize.options">
+                <option value="" disabled selected>Select team size</option>
+                <option value="4-6">4 - 6 people</option>
+                <option value="7-12">7 - 12 people</option>
+                <option value="12+">12+ people</option>
+              </select>
+            </div>
+            <div class="sw-form-field">
+              <label for="sw-pilot-message" class="sw-form-label sw-form-label--light" data-i18n="form.message.label" data-i18n-html="true">Anything you'd like us to know? <span class="sw-form-optional">(optional)</span></label>
+              <textarea id="sw-pilot-message" name="message" class="sw-form-textarea" data-i18n-placeholder="form.message.placeholder" placeholder="Tell us about your team, goals, or questions..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="blob-btn sw-pilot__submit">
+              <span class="blob-btn__text" data-i18n="form.submit">Send my details</span>
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </button>
+            <div class="sw-form-confirmation" id="swPilotFormConfirmation">
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#77bccc"/><path d="M7.5 12.5l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="form.confirmation">Your details have been sent!</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- SVG noise filter -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute;width:0;height:0;">
+    <defs>
+      <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+    </defs>
+  </svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute;width:0;height:0;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="6"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+
+  <script src="scrum-workshop.js"></script>
+  <script type="module" src="scrum-workshop-dice.js"></script>
+  <script type="module" src="scrum-workshop-dice-strip.js"></script>
+</body>
+</html>
