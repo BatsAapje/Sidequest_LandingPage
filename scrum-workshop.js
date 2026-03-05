@@ -13,6 +13,23 @@ const translations = {
     'hero.subtitle': 'Just half a day. Fully immersive. Zero slides.',
     'hero.cta': 'Join as a pilot team',
     'hero.note': 'Limited spots available &middot; Discounted pilot rate',
+    // Hero decorative cards
+    'hero.folder.title': 'Sprint',
+    'hero.folder.item1': 'Define user stories',
+    'hero.folder.item2': 'Assign Scrum roles',
+    'hero.folder.item3': 'Run first sprint',
+    'hero.folder.item4': 'Sprint retrospective',
+    'hero.folder.progress': '2 of 4 completed',
+    'hero.standup.title': 'Daily Standup',
+    'hero.standup.participants': 'Participants',
+    'hero.standup.time': 'Time',
+    'hero.standup.sprint': 'Sprint',
+    'hero.standup.challenges': 'Challenges',
+    'hero.retro.title': 'Retro',
+    'hero.retro.item1': 'Roles made decisions faster',
+    'hero.retro.item2': 'Time pressure was intense',
+    'hero.retro.item3': 'Try shorter sprint cycles',
+    'hero.retro.scoreLabel': 'Team score',
     // How
     'how.tag': 'How it works',
     'how.title': 'How a session <em>works</em>',
@@ -54,7 +71,14 @@ const translations = {
     'leaderboard.tag': 'Leaderboard',
     'leaderboard.title': "Track your team's <em>performance</em>",
     'leaderboard.subtitle': 'Every team earns a score. See how you compare against other teams across companies.',
-
+    'leaderboard.th.rank': 'Rank',
+    'leaderboard.th.team': 'Team',
+    'leaderboard.th.company': 'Company',
+    'leaderboard.th.teamSize': 'Team Size',
+    'leaderboard.th.score': 'Score',
+    'leaderboard.th.badge': 'Badge',
+    'leaderboard.yourTeam': '⭐ Your Team',
+    'leaderboard.yourCompany': 'Your Company',
     // Why
     'why.tag': 'What makes this different',
     'why.title': 'Why coaches <em>love</em> this',
@@ -74,9 +98,16 @@ const translations = {
     'who.item2': 'Agile coaches who want a hands-on tool instead of another training deck',
     'who.item3': 'Teams going through change, new members, new ways of working, or stuck in old patterns',
     'who.item4': 'Organizations that want to make Scrum adoption actually stick',
-    // Testimonial
-    'testimonial.quote': "\u201CSidequest's Scrum workshop was really memorable. It brought real-life examples to life in a playful and engaging way.\u201D",
-    'testimonial.role': 'Product Owner &middot; KLM',
+    // Testimonials
+    'testimonials.tag': 'Testimonials',
+    'testimonials.title': '<span class="mobile-block">What our</span> <em>clients</em> say',
+    'testimonials.subtitle': "Don't just take our word for it. Here's what people have to say after playing our games.",
+    'testimonials.card1.quote': '\u201CWe were still talking about the Scrum workshop hours later. It was not only fun, but genuinely insightful. The whole team was engaged from start to finish.\u201D',
+    'testimonials.card1.role': 'Marketing Manager',
+    'testimonials.card2.quote': '\u201CSidequest their Scrum workshop was really memorable. It brought real-life examples to life in a playful and engaging way.\u201D',
+    'testimonials.card2.role': 'Product Owner',
+    'testimonials.card3.company': 'You?',
+    'testimonials.card3.cta': 'Get in touch',
     // Pilot
     'pilot.title': 'Be one of the first teams to <em>play</em>',
     'pilot.body': "We're in the final stage of development and looking for a small number of teams to pilot the workshop. As a pilot team, you get early access at a discounted rate, and your feedback helps shape the final version.",
@@ -99,9 +130,9 @@ const translations = {
     'form.company.label': 'Company / organization',
     'form.company.placeholder': 'Company name',
     'form.role.label': 'Your role',
-    'form.role.options': ['Select your role', 'Scrum Master', 'Agile Coach', 'Product Owner', 'Developer', 'Team Lead', 'Other'],
+    'form.role.options': ['Select your role', 'Scrum Master', 'Agile Coach', 'Product Owner', 'Developer', 'Other'],
     'form.teamsize.label': 'Team size',
-    'form.teamsize.options': ['Select team size', '3 - 5 people', '6 - 8 people', '9 - 12 people', '12+ people'],
+    'form.teamsize.options': ['Select team size', '4 - 6 people', '7 - 12 people', '12+ people'],
     'form.message.label': 'Anything you\'d like us to know? <span class="sw-form-optional">(optional)</span>',
     'form.message.placeholder': 'Tell us about your team, goals, or questions...',
     'form.submit': 'Send my details',
@@ -115,10 +146,27 @@ const translations = {
     'nav.signup': 'Aanmelden',
     'nav.cta': 'Aanmelden',
     // Hero
-    'hero.title': 'Een Scrum escape room waar je team echt van <em>leert</em>',
-    'hero.subtitle': 'Je team gaat een echte Scrum-uitdaging aan, onder tijdsdruk, met wisselende rollen en gezamenlijke beslissingen. Een halve dag, volledig immersief, nul slides.',
+    'hero.title': 'De Scrum escape room waar je team echt van <em>leert</em>',
+    'hero.subtitle': 'Een halve dag. Samen bouwen. Geen slides.',
     'hero.cta': 'Doe mee als pilotteam',
     'hero.note': 'Beperkt aantal plekken &middot; Korting voor pilotteams',
+    // Hero decorative cards
+    'hero.folder.title': 'Sprint',
+    'hero.folder.item1': 'User stories defini\u00EBren',
+    'hero.folder.item2': 'Scrum-rollen toewijzen',
+    'hero.folder.item3': 'Eerste sprint draaien',
+    'hero.folder.item4': 'Sprint retrospective',
+    'hero.folder.progress': '2 van 4 afgerond',
+    'hero.standup.title': 'Dagelijkse Standup',
+    'hero.standup.participants': 'Deelnemers',
+    'hero.standup.time': 'Tijd',
+    'hero.standup.sprint': 'Sprint',
+    'hero.standup.challenges': 'Uitdagingen',
+    'hero.retro.title': 'Retro',
+    'hero.retro.item1': 'Rollen versnelden beslissingen',
+    'hero.retro.item2': 'Tijdsdruk was intens',
+    'hero.retro.item3': 'Kortere sprintcycli proberen',
+    'hero.retro.scoreLabel': 'Teamscore',
     // How
     'how.tag': 'Hoe het werkt',
     'how.title': 'Hoe een sessie <em>werkt</em>',
@@ -153,14 +201,21 @@ const translations = {
     'how.done.c.title': 'Meetbare groei',
     'how.done.c.desc': 'Concrete inzichten om mee aan de slag te gaan. Speel over een paar maanden opnieuw.',
     'how.detail1': 'Halve dag (3-4 uur)',
-    'how.detail2': '5-9 personen per team',
+    'how.detail2': '4-25 personen per workshop',
     'how.detail3': 'Op locatie bij jullie',
     'how.detail4': 'Geen voorbereiding nodig',
     // Leaderboard
-    'leaderboard.tag': 'Leaderboard',
-    'leaderboard.title': "Volg de <em>prestaties</em> van je team",
+    'leaderboard.tag': 'Scorebord',
+    'leaderboard.title': 'Volg de <em>prestaties</em> van je team',
     'leaderboard.subtitle': 'Elk team verdient een score. Vergelijk je resultaat met andere teams binnen en buiten je bedrijf.',
-
+    'leaderboard.th.rank': 'Rang',
+    'leaderboard.th.team': 'Team',
+    'leaderboard.th.company': 'Bedrijf',
+    'leaderboard.th.teamSize': 'Teamgrootte',
+    'leaderboard.th.score': 'Score',
+    'leaderboard.th.badge': 'Badge',
+    'leaderboard.yourTeam': '⭐ Jouw Team',
+    'leaderboard.yourCompany': 'Jouw Bedrijf',
     // Why
     'why.tag': 'Wat dit anders maakt',
     'why.title': 'Waarom coaches hier <em>fan</em> van zijn',
@@ -180,9 +235,16 @@ const translations = {
     'who.item2': 'Agile coaches die een hands-on tool willen in plaats van weer een training',
     'who.item3': 'Teams in verandering, nieuwe leden, nieuwe werkwijzen, of vastgelopen patronen',
     'who.item4': 'Organisaties die willen dat Scrum-adoptie echt beklijft',
-    // Testimonial
-    'testimonial.quote': '\u201CDe Scrum-workshop van Sidequest was echt memorabel. Het bracht voorbeelden uit de praktijk tot leven op een speelse en boeiende manier.\u201D',
-    'testimonial.role': 'Product Owner &middot; KLM',
+    // Testimonials
+    'testimonials.tag': 'Referenties',
+    'testimonials.title': '<span class="mobile-block">Wat onze</span> <em>klanten</em> zeggen',
+    'testimonials.subtitle': 'Neem niet alleen ons woord ervoor. Dit zeggen anderen na het spelen van onze games.',
+    'testimonials.card1.quote': '\u201CWe hadden het uren later nog over de Scrum-workshop. Het was niet alleen leuk, maar ook echt leerzaam. Het hele team was van begin tot eind betrokken.\u201D',
+    'testimonials.card1.role': 'Marketing Manager',
+    'testimonials.card2.quote': '\u201CDe Scrum-workshop van Sidequest was echt memorabel. Het bracht voorbeelden uit de praktijk tot leven op een speelse en boeiende manier.\u201D',
+    'testimonials.card2.role': 'Product Owner',
+    'testimonials.card3.company': 'Jij?',
+    'testimonials.card3.cta': 'Neem contact op',
     // Pilot
     'pilot.title': 'Wees een van de eerste teams die <em>speelt</em>',
     'pilot.body': 'We zitten in de laatste fase van ontwikkeling en zoeken een klein aantal teams om de workshop te piloten. Als pilotteam krijg je vroege toegang tegen een gereduceerd tarief, en je feedback helpt de definitieve versie vormen.',
@@ -205,9 +267,9 @@ const translations = {
     'form.company.label': 'Bedrijf / organisatie',
     'form.company.placeholder': 'Bedrijfsnaam',
     'form.role.label': 'Je rol',
-    'form.role.options': ['Selecteer je rol', 'Scrum Master', 'Agile Coach', 'Product Owner', 'Developer', 'Team Lead', 'Anders'],
+    'form.role.options': ['Selecteer je rol', 'Scrum Master', 'Agile Coach', 'Product Owner', 'Developer', 'Anders'],
     'form.teamsize.label': 'Teamgrootte',
-    'form.teamsize.options': ['Selecteer teamgrootte', '3 - 5 personen', '6 - 8 personen', '9 - 12 personen', '12+ personen'],
+    'form.teamsize.options': ['Selecteer teamgrootte', '4 - 6 personen', '7 - 12 personen', '12+ personen'],
     'form.message.label': 'Wil je ons nog iets laten weten? <span class="sw-form-optional">(optioneel)</span>',
     'form.message.placeholder': 'Vertel ons over je team, doelen of vragen...',
     'form.submit': 'Verstuur mijn gegevens',
@@ -219,10 +281,13 @@ const translations = {
 // ===== i18n engine =====
 let currentLang = 'en';
 
-function setLanguage(lang, selectedFlag) {
+function setLanguage(lang) {
   currentLang = lang;
   const dict = translations[lang];
   if (!dict) return;
+
+  // Persist choice across pages
+  try { localStorage.setItem('sq-lang', lang); } catch(e) {}
 
   // Update all [data-i18n] elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -253,43 +318,16 @@ function setLanguage(lang, selectedFlag) {
     });
   });
 
-  // Update all language switchers to reflect current language
-  updateSwitchers(lang, selectedFlag);
+  // Sync all toggle UI states
+  document.querySelectorAll('.lang-toggle').forEach(t => {
+    t.querySelectorAll('.lang-toggle__opt').forEach(o => {
+      o.classList.toggle('lang-toggle__opt--active', o.getAttribute('data-lang') === lang);
+    });
+    t.classList.toggle('is-nl', lang === 'nl');
+  });
 
   // Update html lang attribute
   document.documentElement.lang = lang;
-}
-
-function updateSwitchers(lang, selectedFlagAttr) {
-  document.querySelectorAll('.lang-switcher').forEach(switcher => {
-    const activeFlag = switcher.querySelector('.lang-flag--active');
-    const tray = switcher.querySelector('.lang-switcher__tray');
-    if (!activeFlag || !tray) return;
-
-    // Skip if this switcher already shows the correct flag
-    if (selectedFlagAttr && activeFlag.getAttribute('data-flag') === selectedFlagAttr) return;
-    if (!selectedFlagAttr && activeFlag.getAttribute('data-lang') === lang) return;
-
-    // Find a matching flag in the tray
-    let newActive;
-    if (selectedFlagAttr) {
-      newActive = tray.querySelector(`.lang-flag[data-flag="${selectedFlagAttr}"]`);
-    }
-    if (!newActive) {
-      newActive = tray.querySelector(`.lang-flag[data-lang="${lang}"]`);
-    }
-    if (!newActive) return;
-
-    // Swap: move old active into tray, pull new active out
-    activeFlag.classList.remove('lang-flag--active');
-    tray.appendChild(activeFlag);
-
-    newActive.classList.add('lang-flag--active');
-    switcher.insertBefore(newActive, tray);
-
-    // Close dropdown
-    switcher.classList.remove('lang-switcher--open');
-  });
 }
 
 // ===== Game card constants =====
@@ -708,6 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const whyNext = document.querySelector('.sw-why-nav__next');
   if (whyTrack && whyPrev && whyNext) {
     const whyCards = whyTrack.querySelectorAll('.sw-why-card');
+    const whyCardCount = whyCards.length;
     let whyIndex = 0;
     let whyAnimId = null;
 
@@ -715,46 +754,169 @@ document.addEventListener('DOMContentLoaded', () => {
       return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
 
-    function whyScrollTo(index) {
-      whyIndex = index;
-      const target = whyCards[index].offsetLeft - whyTrack.offsetLeft;
+    function getWhyCardOffset(index) {
+      if (index < 0 || index >= whyCardCount) return 0;
+      return whyCards[index].offsetLeft - whyTrack.offsetLeft;
+    }
+
+    // Initialize scroll to card 0
+    whyTrack.scrollLeft = getWhyCardOffset(0);
+
+    function whyAnimateScroll(to, duration) {
       if (whyAnimId) cancelAnimationFrame(whyAnimId);
-      const from = whyTrack.scrollLeft;
-      const start = performance.now();
-      const dist = target - from;
-      (function step(now) {
-        const p = Math.min((now - start) / 400, 1);
-        whyTrack.scrollLeft = from + dist * whyEase(p);
-        if (p < 1) whyAnimId = requestAnimationFrame(step);
-        else whyAnimId = null;
-      })(performance.now());
+      var from = whyTrack.scrollLeft;
+      var start = performance.now();
+      var distance = to - from;
+
+      function step(now) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        var eased = whyEase(progress);
+        whyTrack.scrollLeft = from + distance * eased;
+
+        if (progress < 1) {
+          whyAnimId = requestAnimationFrame(step);
+        } else {
+          whyTrack.scrollLeft = to;
+          whyAnimId = null;
+        }
+      }
+
+      whyAnimId = requestAnimationFrame(step);
+    }
+
+    function whyGoTo(index) {
+      whyIndex = index;
+      whyAnimateScroll(getWhyCardOffset(whyIndex), 500);
     }
 
     whyNext.addEventListener('click', () => {
-      whyScrollTo(whyIndex + 1 >= whyCards.length ? 0 : whyIndex + 1);
+      var next = whyIndex + 1;
+      whyGoTo(next >= whyCardCount ? 0 : next);
     });
     whyPrev.addEventListener('click', () => {
-      whyScrollTo(whyIndex - 1 < 0 ? whyCards.length - 1 : whyIndex - 1);
+      var prev = whyIndex - 1;
+      whyGoTo(prev < 0 ? whyCardCount - 1 : prev);
     });
   }
 
-  // Kanban cards scroll-in animation (staggered)
+  // Mobile scroll-triggered hover animations for testimonial cards
+  const mobileQuery = window.matchMedia('(max-width: 1024px)');
+  let mobileObserver = null;
+
+  function setupMobileAnimations() {
+    if (mobileQuery.matches && !mobileObserver) {
+      const animatedCards = document.querySelectorAll('.testimonial-card');
+      mobileObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-hovered');
+          } else {
+            entry.target.classList.remove('is-hovered');
+          }
+        });
+      }, { threshold: 0.4, rootMargin: '-35% 0px -35% 0px' });
+      animatedCards.forEach(card => mobileObserver.observe(card));
+    } else if (!mobileQuery.matches && mobileObserver) {
+      mobileObserver.disconnect();
+      mobileObserver = null;
+      document.querySelectorAll('.testimonial-card.is-hovered').forEach(el => el.classList.remove('is-hovered'));
+    }
+  }
+
+  setupMobileAnimations();
+  mobileQuery.addEventListener('change', setupMobileAnimations);
+
+  // Kanban cards scroll-in animation (staggered) + repeating wiggle hint
   const kanbanCards = document.querySelectorAll('.sw-kanban__card');
   if (kanbanCards.length && 'IntersectionObserver' in window) {
+    let wiggleStarted = false;
+    let wiggleInterval = null;
+    let userHasDragged = false;
+
+    // Stop wiggle permanently once any card is dragged
+    document.addEventListener('pointerdown', function checkDrag(e) {
+      if (e.target.closest('.sw-kanban__card[data-thread]')) {
+        userHasDragged = true;
+        if (wiggleInterval) { clearInterval(wiggleInterval); wiggleInterval = null; }
+        document.removeEventListener('pointerdown', checkDrag);
+      }
+    });
+
+    function runWiggle() {
+      if (userHasDragged) return;
+      const plannedCards = document.querySelectorAll('.sw-kanban__col[data-column="planned"] .sw-kanban__card');
+      plannedCards.forEach((card, i) => {
+        setTimeout(() => {
+          if (userHasDragged) return;
+          card.classList.add('wiggle-hint');
+          card.addEventListener('animationend', () => {
+            card.classList.remove('wiggle-hint');
+          }, { once: true });
+        }, i * 150);
+      });
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger based on card index
           const cards = Array.from(kanbanCards);
           const idx = cards.indexOf(entry.target);
           setTimeout(() => {
             entry.target.classList.add('is-visible');
           }, idx * 100);
           observer.unobserve(entry.target);
+
+          // Start repeating wiggle after cards appear
+          if (!wiggleStarted) {
+            wiggleStarted = true;
+            // First wiggle after cards finish appearing
+            setTimeout(() => {
+              runWiggle();
+              // Repeat every 3 seconds
+              wiggleInterval = setInterval(runWiggle, 3000);
+            }, (cards.length * 100) + 400);
+          }
         }
       });
     }, { threshold: 0.2 });
     kanbanCards.forEach(card => observer.observe(card));
+  }
+
+  // ===== Kanban swipe dots (phone) =====
+  const kanbanBoard = document.querySelector('.sw-kanban__board');
+  const kanbanDots = document.querySelectorAll('.sw-kanban__dot-ind');
+  if (kanbanBoard && kanbanDots.length) {
+    const kanbanCols = kanbanBoard.querySelectorAll('.sw-kanban__col');
+    function updateKanbanDots() {
+      if (window.innerWidth > 520) return;
+      var scrollLeft = kanbanBoard.scrollLeft;
+      var boardWidth = kanbanBoard.scrollWidth - kanbanBoard.clientWidth;
+      if (boardWidth <= 0) return;
+      var ratio = scrollLeft / boardWidth;
+      var activeIdx = Math.round(ratio * (kanbanCols.length - 1));
+      kanbanDots.forEach(function(dot, i) {
+        dot.classList.toggle('active', i === activeIdx);
+      });
+    }
+    kanbanBoard.addEventListener('scroll', function() {
+      requestAnimationFrame(updateKanbanDots);
+    }, { passive: true });
+
+    // Also allow tapping dots to scroll to column
+    kanbanDots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() {
+        if (window.innerWidth > 520) return;
+        var col = kanbanCols[i];
+        if (col) {
+          kanbanBoard.scrollTo({
+            left: col.offsetLeft - kanbanBoard.offsetLeft - 12,
+            behavior: 'smooth'
+          });
+        }
+      });
+      dot.style.cursor = 'pointer';
+    });
   }
 
   // ===== Kanban Drag & Drop =====
@@ -799,44 +961,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Language switcher (hover dropdown with flag selection)
-  document.querySelectorAll('.lang-switcher').forEach(switcher => {
-    switcher.addEventListener('click', (e) => {
-      const clickedFlag = e.target.closest('.lang-flag');
-      if (!clickedFlag) return;
+  // Language toggle (pill switch EN/NL)
+  document.querySelectorAll('.lang-toggle').forEach(toggle => {
+    toggle.querySelectorAll('.lang-toggle__opt').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const lang = opt.getAttribute('data-lang');
+        if (opt.classList.contains('lang-toggle__opt--active')) return;
 
-      if (clickedFlag.classList.contains('lang-flag--active')) {
-        // Tapped the active flag — toggle dropdown (for mobile)
-        switcher.classList.toggle('lang-switcher--open');
-      } else {
-        // Clicked a flag in the tray — select it
-        const newLang = clickedFlag.getAttribute('data-lang');
-        const newFlag = clickedFlag.getAttribute('data-flag');
+        // Update ALL toggles on the page
+        document.querySelectorAll('.lang-toggle').forEach(t => {
+          t.querySelectorAll('.lang-toggle__opt').forEach(o => {
+            o.classList.toggle('lang-toggle__opt--active', o.getAttribute('data-lang') === lang);
+          });
+          t.classList.toggle('is-nl', lang === 'nl');
+        });
 
-        // Swap in THIS switcher
-        const activeFlag = switcher.querySelector('.lang-flag--active');
-        const tray = switcher.querySelector('.lang-switcher__tray');
-
-        activeFlag.classList.remove('lang-flag--active');
-        tray.appendChild(activeFlag);
-
-        clickedFlag.classList.add('lang-flag--active');
-        switcher.insertBefore(clickedFlag, tray);
-
-        switcher.classList.remove('lang-switcher--open');
-
-        // Sync all other switchers and update language
-        setLanguage(newLang, newFlag);
-      }
-    });
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', (e) => {
-    document.querySelectorAll('.lang-switcher').forEach(s => {
-      if (!s.contains(e.target)) {
-        s.classList.remove('lang-switcher--open');
-      }
+        setLanguage(lang);
+      });
     });
   });
 
@@ -931,4 +1072,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onIpadScroll, { passive: true });
     updateIpadTransform();
   }
+
+  // Restore saved language from localStorage
+  try {
+    var savedLang = localStorage.getItem('sq-lang');
+    if (savedLang && savedLang !== 'en' && translations[savedLang]) {
+      setLanguage(savedLang);
+    }
+  } catch(e) {}
 });
