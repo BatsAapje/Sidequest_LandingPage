@@ -31,6 +31,7 @@ var translations = {
     'offers.card1.sessionName': 'Strategy Game Session',
     'offers.card1.sessionTime': '2:00 – 4:00 PM',
     'offers.card1.sessionLabel': 'Innovation Workshop',
+    'offers.card1.tooltip': 'See our Scrum workshop',
     'offers.card2.title': 'Tailor-made games',
     'offers.card2.desc': 'Your challenges, turned into play. Custom-designed for your team and goals.',
     'offers.card2.briefName': 'Your Brief',
@@ -140,6 +141,7 @@ var translations = {
     'offers.card1.sessionName': 'Strategie Game Sessie',
     'offers.card1.sessionTime': '14:00 – 16:00',
     'offers.card1.sessionLabel': 'Innovatie Workshop',
+    'offers.card1.tooltip': 'Bekijk onze Scrum workshop',
     'offers.card2.title': 'Maatwerkgames',
     'offers.card2.desc': 'Jouw uitdagingen, omgezet in spel. Op maat ontworpen voor jouw team en doelen.',
     'offers.card2.briefName': 'Jouw Briefing',
@@ -256,6 +258,24 @@ function setLanguage(lang) {
   });
 
   document.documentElement.lang = lang;
+
+  // Update URL to reflect language
+  try {
+    if (lang === 'nl') {
+      history.replaceState(null, '', '/NL/');
+    } else {
+      var path = window.location.pathname;
+      if (path.toLowerCase().indexOf('/nl') === 0) {
+        history.replaceState(null, '', '/');
+      }
+    }
+  } catch(e) {}
+
+  // Update cross-page links
+  var prefix = lang === 'nl' ? '/NL/' : '/';
+  document.querySelectorAll('a[href*="scrum-workshop"]').forEach(function(a) {
+    a.href = prefix + 'scrum-workshop.html';
+  });
 }
 
 // Benefits carousel navigation
@@ -447,11 +467,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Restore saved language from localStorage
-  try {
-    var savedLang = localStorage.getItem('sq-lang');
-    if (savedLang && savedLang !== 'en' && translations[savedLang]) {
-      setLanguage(savedLang);
-    }
-  } catch(e) {}
+  // Restore language from URL path or localStorage
+  var urlHasNL = window.location.pathname.toLowerCase().indexOf('/nl') === 0;
+  if (urlHasNL) {
+    setLanguage('nl');
+  } else {
+    try {
+      var savedLang = localStorage.getItem('sq-lang');
+      if (savedLang && savedLang !== 'en' && translations[savedLang]) {
+        setLanguage(savedLang);
+      }
+    } catch(e) {}
+  }
 });

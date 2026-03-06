@@ -120,6 +120,7 @@ const translations = {
     'pilot.ask.item1': 'Honest feedback after the session',
     'pilot.ask.item2': 'Permission to use anonymized results for benchmarking (optional)',
     'pilot.cta': 'Sign up as a pilot team',
+    'pilot.form.title': 'Sign up as a pilot team',
     // Form
     'form.tag': 'Get started',
     'form.title': 'Interested? Leave your <em>details</em>',
@@ -257,6 +258,7 @@ const translations = {
     'pilot.ask.item1': 'Eerlijke feedback na de sessie',
     'pilot.ask.item2': 'Toestemming om geanonimiseerde resultaten te gebruiken voor benchmarking (optioneel)',
     'pilot.cta': 'Aanmelden als pilotteam',
+    'pilot.form.title': 'Aanmelden als pilotteam',
     // Form
     'form.tag': 'Aan de slag',
     'form.title': 'Interesse? Laat je <em>gegevens</em> achter',
@@ -328,6 +330,24 @@ function setLanguage(lang) {
 
   // Update html lang attribute
   document.documentElement.lang = lang;
+
+  // Update URL to reflect language
+  try {
+    if (lang === 'nl') {
+      history.replaceState(null, '', '/NL/scrum-workshop.html');
+    } else {
+      var path = window.location.pathname;
+      if (path.toLowerCase().indexOf('/nl') === 0) {
+        history.replaceState(null, '', '/scrum-workshop.html');
+      }
+    }
+  } catch(e) {}
+
+  // Update cross-page links
+  var prefix = lang === 'nl' ? '/NL/' : '/';
+  document.querySelectorAll('a.nav-logo').forEach(function(a) {
+    a.href = prefix;
+  });
 }
 
 // ===== Game card constants =====
@@ -1073,11 +1093,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateIpadTransform();
   }
 
-  // Restore saved language from localStorage
-  try {
-    var savedLang = localStorage.getItem('sq-lang');
-    if (savedLang && savedLang !== 'en' && translations[savedLang]) {
-      setLanguage(savedLang);
-    }
-  } catch(e) {}
+  // Restore language from URL path or localStorage
+  var urlHasNL = window.location.pathname.toLowerCase().indexOf('/nl') === 0;
+  if (urlHasNL) {
+    setLanguage('nl');
+  } else {
+    try {
+      var savedLang = localStorage.getItem('sq-lang');
+      if (savedLang && savedLang !== 'en' && translations[savedLang]) {
+        setLanguage(savedLang);
+      }
+    } catch(e) {}
+  }
 });

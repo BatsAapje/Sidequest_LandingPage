@@ -1018,6 +1018,33 @@ a {
   transform: scale(1.1);
 }
 
+.offer-card__tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--purple-dark);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(113, 113, 211, 0.10);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(-50%) translateX(6px);
+}
+
+.offer-card__link:hover .offer-card__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
 .offer-card__icon {
   width: 20px;
   height: 20px;
