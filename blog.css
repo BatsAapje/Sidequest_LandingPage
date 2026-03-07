@@ -475,6 +475,10 @@ a {
   flex-wrap: wrap;
 }
 
+.blog-filters[hidden] {
+  display: none !important;
+}
+
 .blog-filters__btn {
   padding: 8px 20px;
   border-radius: 100px;
