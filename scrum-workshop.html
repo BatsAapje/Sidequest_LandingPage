@@ -48,6 +48,7 @@
         <a href="#how" class="nav-link"><span data-i18n="nav.how">How it works</span></a>
         <a href="#why" class="nav-link"><span data-i18n="nav.why">Why this</span></a>
         <a href="#signup" class="nav-link"><span data-i18n="nav.signup">Sign up</span></a>
+        <a href="blog.html" class="nav-link"><span data-i18n="nav.blog">Blog</span></a>
       </div>
       <div class="nav-actions">
         <div class="lang-toggle" role="radiogroup" aria-label="Language">
@@ -77,6 +78,7 @@
     <div class="mobile-menu" id="mobile-menu">
       <a href="#how" data-i18n="nav.how">How it works</a>
       <a href="#why" data-i18n="nav.why">Why this</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="#signup" class="mobile-cta" data-i18n="nav.signup">Sign up</a>
     </div>
   </header>
@@ -297,7 +299,7 @@
 
           <!-- Value progress bar -->
           <div class="sw-kanban__value-bar" aria-hidden="true">
-            <span class="sw-kanban__value-label">Value delivered</span>
+            <span class="sw-kanban__value-label" data-i18n="how.valueLabel">Value delivered</span>
             <div class="sw-kanban__value-track">
               <div class="sw-kanban__value-fill"></div>
             </div>
@@ -767,6 +769,16 @@
       </filter>
     </defs>
   </svg>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="/" class="site-footer__logo">
+        <img src="assets/logo.svg" alt="Sidequest" />
+      </a>
+      <p class="site-footer__copy">&copy; 2026 Sidequest. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="scrum-workshop.js"></script>
   <script type="module" src="scrum-workshop-dice.js"></script>

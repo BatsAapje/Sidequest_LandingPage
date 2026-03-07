@@ -10,6 +10,7 @@ var translations = {
     'nav.benefits': 'Benefits',
     'nav.testimonials': 'Testimonials',
     'nav.faq': 'FAQ',
+    'nav.blog': 'Blog',
     'nav.cta': 'Get in touch',
 
     // Hero
@@ -39,7 +40,7 @@ var translations = {
     'offers.card3.desc': 'Games with a purpose, designed for playful learning at home.',
 
     // Origin
-    'origin.p1': 'Sidequest started in 2019 when founder Jeroen used games during his master\'s studies to make complex sustainability challenges easier to understand.',
+    'origin.p1': 'Sidequest has its origins in 2019, when founder Jeroen used games during his master\'s studies to make complex sustainability challenges easier to understand.',
     'origin.p2': 'What started as a passion for creating fun games then evolved into a new approach to learning.',
 
     // Benefits
@@ -120,7 +121,8 @@ var translations = {
     'nav.benefits': 'Voordelen',
     'nav.testimonials': 'Referenties',
     'nav.faq': 'FAQ',
-    'nav.cta': 'Neem contact op',
+    'nav.blog': 'Blog',
+    'nav.cta': 'Contact',
 
     // Hero
     'hero.title': 'Games gemaakt voor',
@@ -149,7 +151,7 @@ var translations = {
     'offers.card3.desc': 'Games met een doel, ontworpen voor speels leren thuis.',
 
     // Origin
-    'origin.p1': 'Sidequest is in 2019 gestart toen oprichter Jeroen tijdens zijn masterstudie games gebruikte om complexe duurzaamheidsvraagstukken beter te begrijpen.',
+    'origin.p1': 'Sidequest vindt zijn oorsprong in 2019, toen oprichter Jeroen tijdens zijn masterstudie games gebruikte om complexe duurzaamheidsvraagstukken makkelijker te begrijpen.',
     'origin.p2': 'Wat begon als een passie voor het maken van leuke games, groeide uit tot een nieuwe manier van leren.',
 
     // Benefits
@@ -275,6 +277,9 @@ function setLanguage(lang) {
   var prefix = lang === 'nl' ? '/NL/' : '/';
   document.querySelectorAll('a[href*="scrum-workshop"]').forEach(function(a) {
     a.href = prefix + 'scrum-workshop.html';
+  });
+  document.querySelectorAll('a[href*="blog"]').forEach(function(a) {
+    a.href = prefix + 'blog.html';
   });
 }
 

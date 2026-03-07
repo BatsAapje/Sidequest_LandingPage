@@ -2703,3 +2703,40 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid var(--gray-200);
+  padding: 16px 24px;
+}
+
+.site-footer__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer__logo img {
+  height: 22px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.site-footer__logo:hover img {
+  opacity: 1;
+}
+
+.site-footer__copy {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  .site-footer__inner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

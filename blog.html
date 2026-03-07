@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidequest Blog</title>
+  <meta name="description" content="Insights on serious games, gamified learning, and interactive workshops from Sidequest.">
+  <link rel="icon" type="image/svg+xml" href="assets/Siedquest_Favicon_Purple.svg">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Sans:wght@500;700&family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="floating-header" id="floating-header">
+    <nav class="floating-nav">
+      <a href="/" class="nav-logo">
+        <img src="assets/logo.svg" alt="Sidequest" />
+      </a>
+      <div class="nav-links">
+      </div>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="radiogroup" aria-label="Language">
+          <div class="lang-toggle__slider"></div>
+          <button class="lang-toggle__opt lang-toggle__opt--active" data-lang="en" type="button">
+            <span class="lang-toggle__flag"><svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><rect width="60" height="30" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" stroke-width="3.6"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg></span>
+            <span class="lang-toggle__text">EN</span>
+          </button>
+          <button class="lang-toggle__opt" data-lang="nl" type="button">
+            <span class="lang-toggle__text">NL</span>
+            <span class="lang-toggle__flag"><svg viewBox="0 0 9 6" preserveAspectRatio="xMidYMid slice"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></svg></span>
+          </button>
+        </div>
+        <div class="btn-mask-wrap">
+          <span class="btn-mask-text" data-i18n="nav.cta">Get in touch</span>
+          <a href="/#contact" class="btn btn-nav" data-i18n="nav.cta">Get in touch</a>
+        </div>
+        <button class="btn-menu" id="menu-toggle" aria-label="Open menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <line x1="2" y1="4" x2="14" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="12" x2="14" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a class="mobile-cta" href="/#contact" data-i18n="nav.cta">Get in touch</a>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-hero__bg">
+      <div class="blog-hero__noise"></div>
+      <div class="blog-hero__grad blog-hero__grad--1"></div>
+      <div class="blog-hero__grad blog-hero__grad--2"></div>
+    </div>
+    <div class="blog-hero__content">
+      <span class="blog-hero__tag" data-i18n="blog.tag">Blog</span>
+      <h1 class="blog-hero__title" data-i18n="blog.title">Insights on play,<br>learning & games</h1>
+      <p class="blog-hero__subtitle" data-i18n="blog.subtitle">Thoughts and ideas from the Sidequest team</p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="blog-filters">
+    <button class="blog-filters__btn blog-filters__btn--active" data-filter="all" data-i18n="blog.filter.all">All</button>
+    <button class="blog-filters__btn" data-filter="education" data-i18n="blog.filter.education">Education</button>
+    <button class="blog-filters__btn" data-filter="columns" data-i18n="blog.filter.columns">Columns</button>
+    <button class="blog-filters__btn" data-filter="frameworks" data-i18n="blog.filter.frameworks">Sidequest Frameworks</button>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="blog-grid">
+    <div class="blog-grid__inner">
+
+      <article class="blog-card" data-article="article-content-2" data-category="education">
+        <div class="blog-card__image">
+          <img src="assets/Applications.jpg" alt="Gamification" class="blog-card__img">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__category" data-i18n="blog.filter.education">Education</span>
+          <div class="blog-card__meta">
+            <span class="blog-card__date" data-i18n="blog.article2.date">March 7, 2026</span>
+            <span class="blog-card__reading" data-i18n="blog.article2.reading">7 min read</span>
+          </div>
+          <h2 class="blog-card__title" data-i18n="blog.article2.title">What is gamification?</h2>
+          <p class="blog-card__excerpt" data-i18n="blog.article2.excerpt">Gamification turns ordinary tasks into experiences people want to complete. Learn how game elements like goals, progress, and challenges can transform work, learning, and more.</p>
+          <a href="#" class="blog-card__read-more" data-i18n="blog.article2.readMore">Read article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-article="article-content-1" data-category="education">
+        <div class="blog-card__image">
+          <img src="assets/Game.avif" alt="Board game" class="blog-card__img">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__category" data-i18n="blog.filter.education">Education</span>
+          <div class="blog-card__meta">
+            <span class="blog-card__date" data-i18n="blog.article1.date">March 7, 2026</span>
+            <span class="blog-card__reading" data-i18n="blog.article1.reading">5 min read</span>
+          </div>
+          <h2 class="blog-card__title" data-i18n="blog.article1.title">What are serious games?</h2>
+          <p class="blog-card__excerpt" data-i18n="blog.article1.excerpt">Serious games are more than just fun. They are designed to teach, train, and transform. Discover what makes a game "serious" and why organizations are embracing them.</p>
+          <a href="#" class="blog-card__read-more" data-i18n="blog.article1.readMore">Read article &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Article 1: Serious Games -->
+  <section class="blog-article" id="article-content-1" hidden>
+    <div class="blog-article__inner">
+      <img src="assets/Game.avif" alt="Board game" class="blog-article__hero-img">
+      <div class="blog-article__header">
+        <span class="blog-article__tag" data-i18n="blog.filter.education">Education</span>
+        <h1 class="blog-article__title" data-i18n="blog.article1.title">What are serious games?</h1>
+        <div class="blog-article__meta">
+          <img src="assets/jeroen.jpg" alt="Jeroen" class="blog-article__avatar">
+          <div>
+            <span class="blog-article__author">Jeroen van Welsenes</span>
+            <span class="blog-article__date" data-i18n="blog.article1.date">March 7, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-article__content" data-i18n="blog.article1.content" data-i18n-html="true">
+        <p>When people hear the word "game," they often think of entertainment. But games can be much more than that. <strong>Serious games</strong> are games designed with a primary purpose beyond pure entertainment. They use game mechanics, dynamics, and design principles to engage people in learning, training, or behavior change.</p>
+
+        <h2>A brief history</h2>
+        <p>The concept isn't new. Military simulations have been used for centuries to train soldiers and test strategies without real-world consequences. In the 1970s, the term "serious games" was first coined by Clark Abt, who argued that games could be powerful tools for education and social change. Today, serious games are used across industries, from healthcare and corporate training to sustainability and team development.</p>
+
+        <h2>What makes a game "serious"?</h2>
+        <p>A serious game has two core ingredients:</p>
+        <ol>
+          <li><strong>A clear learning objective.</strong> The game is designed around a specific goal, whether that's teaching Scrum methodology, improving communication, or understanding a complex system.</li>
+          <li><strong>Engaging game mechanics.</strong> It uses elements like challenges, feedback loops, scoring, time pressure, and collaboration to keep participants motivated and immersed.</li>
+        </ol>
+        <p>The magic happens when these two combine. Players are so engaged in the experience that learning feels natural rather than forced.</p>
+
+        <h2>Why do they work?</h2>
+        <p>Serious games tap into how our brains actually learn best:</p>
+        <ul>
+          <li><strong>Active participation.</strong> Instead of passively absorbing information, players make decisions, solve problems, and experience consequences firsthand.</li>
+          <li><strong>Safe failure.</strong> Games create a safe space to experiment, make mistakes, and try different approaches without real-world risk.</li>
+          <li><strong>Emotional engagement.</strong> The excitement, competition, and collaboration in games create emotional connections that make lessons stick.</li>
+          <li><strong>Immediate feedback.</strong> Players see the results of their actions right away, accelerating the learning cycle.</li>
+        </ul>
+
+        <h2>Serious games at Sidequest</h2>
+        <p>At Sidequest, we design serious games that turn business frameworks and methodologies into interactive experiences. Our Scrum workshop, for example, is an escape room-style game where teams learn Scrum by actually doing it under time pressure, making decisions, and reflecting on what worked.</p>
+        <p>We believe that the best way to learn is by playing. Not because it's easier, but because it's more effective, more memorable, and a lot more fun.</p>
+
+        <h2>Want to learn more?</h2>
+        <p>Curious how serious games can work for your team? <a href="/#contact">Get in touch</a> and let's explore the possibilities together.</p>
+      </div>
+      <div class="author-card">
+        <img src="assets/jeroen.jpg" alt="Jeroen van Welsenes" class="author-card__avatar">
+        <div class="author-card__info">
+          <span class="author-card__label" data-i18n="blog.author.label">Written by</span>
+          <h3 class="author-card__name">Jeroen van Welsenes</h3>
+          <p class="author-card__role" data-i18n="blog.author.role">Founder, Sidequest</p>
+          <p class="author-card__bio" data-i18n="blog.author.bio">Jeroen founded Sidequest with a simple belief: work and education should be enjoyable. We're naturally wired to learn by doing, so why not design it that way?</p>
+        </div>
+      </div>
+      <button class="blog-article__back back-to-blog">&larr; <span data-i18n="blog.back">Back to blog</span></button>
+    </div>
+  </section>
+
+  <!-- Article 2: Gamification -->
+  <section class="blog-article" id="article-content-2" hidden>
+    <div class="blog-article__inner">
+      <img src="assets/Applications.jpg" alt="Gamification" class="blog-article__hero-img">
+      <div class="blog-article__header">
+        <span class="blog-article__tag" data-i18n="blog.filter.education">Education</span>
+        <h1 class="blog-article__title" data-i18n="blog.article2.title">What is gamification?</h1>
+        <div class="blog-article__meta">
+          <img src="assets/jeroen.jpg" alt="Jeroen" class="blog-article__avatar">
+          <div>
+            <span class="blog-article__author">Jeroen van Welsenes</span>
+            <span class="blog-article__date" data-i18n="blog.article2.date">March 7, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-article__content" data-i18n="blog.article2.content" data-i18n-html="true">
+        <p>Gamification is the use of game elements in non-game contexts to make activities more engaging, motivating, and enjoyable. In simple terms: it means turning normal tasks into something that feels more like a game.</p>
+
+        <h2>The idea behind it</h2>
+        <p>Games are incredibly good at keeping people motivated. They use things like:</p>
+        <ul>
+          <li><strong>Goals</strong>, clear objectives to reach</li>
+          <li><strong>Rewards</strong>, points, badges, achievements</li>
+          <li><strong>Progress</strong>, levels or visible improvement</li>
+          <li><strong>Challenges</strong>, tasks that feel rewarding to complete</li>
+          <li><strong>Competition or collaboration</strong>, leaderboards or teams</li>
+        </ul>
+        <p>Gamification takes these elements and applies them to areas like work, education, health, or marketing.</p>
+
+        <h2>Real-world examples</h2>
+        <h3>Learning</h3>
+        <p>Language apps like Duolingo use streaks, levels, and XP points. This makes studying feel like progressing in a game.</p>
+        <div class="blog-article__phone-gallery">
+          <img src="assets/Duolingo iOS 74.png" alt="Duolingo progress screen showing levels and XP" class="blog-article__phone-img">
+          <img src="assets/Duolingo iOS 130.png" alt="Duolingo achievement screen" class="blog-article__phone-img">
+          <img src="assets/Duolingo iOS 318.png" alt="Duolingo streak calendar" class="blog-article__phone-img">
+        </div>
+        <h3>Work</h3>
+        <p>A sales team might get points for closing deals, a leaderboard to track performance, and monthly challenges. This motivates performance through friendly competition.</p>
+        <h3>Fitness</h3>
+        <p>Apps like Strava use badges, personal records, and social competition. This encourages people to exercise more by making progress visible and social.</p>
+
+        <h2>Why gamification is everywhere in apps</h2>
+        <p>Gamification is especially popular in digital products because it's relatively easy to implement and incredibly effective. A progress bar here, a checklist there, and suddenly users are far more engaged.</p>
+        <p>A great example is <strong>LinkedIn</strong>. When you create a new account, LinkedIn guides you through completing your profile using classic gamification techniques: a profile completion bar that fills up as you add information, to-do items that get ticked off one by one, and prompts that encourage you to take the next step. You're not playing a game, but the experience taps into the same psychology: we like seeing progress, completing tasks, and reaching 100%.</p>
+
+        <p>This is why so many apps use gamification. It doesn't require building a full game, just applying the right elements to make an existing experience more motivating.</p>
+
+        <h2>The gamification formula</h2>
+        <p>You could summarize gamification as:</p>
+        <p><strong>Motivation + Progress + Challenge + Reward = Gamification</strong></p>
+
+        <h2>The deeper goal</h2>
+        <p>Good gamification is not just about adding points or badges. It tries to tap into fundamental human motivations:</p>
+        <ul>
+          <li><strong>Achievement</strong>, the desire to accomplish something meaningful</li>
+          <li><strong>Curiosity</strong>, the drive to explore and discover</li>
+          <li><strong>Competition</strong>, the thrill of measuring yourself against others</li>
+          <li><strong>Mastery</strong>, the satisfaction of getting better at something</li>
+          <li><strong>Social connection</strong>, the need to belong and collaborate</li>
+        </ul>
+
+
+        <h2>Three levels of understanding gamification</h2>
+        <h3>1. The simple definition</h3>
+        <p>Gamification is using elements from games, like points, levels, challenges, rewards, and progress bars, to make normal activities more engaging and motivating.</p>
+        <p><em>Example: A language app gives you points and streaks to motivate you to keep learning.</em></p>
+
+        <h3>2. The practical definition</h3>
+        <p>Gamification is the design of tasks, learning, or work environments so they feel more like a game, with clear goals, visible progress, and motivating challenges.</p>
+        <p>Key elements usually include:</p>
+        <ul>
+          <li><strong>Clear goals</strong>, you know what you are trying to achieve</li>
+          <li><strong>Progress</strong>, you can see improvement over time</li>
+          <li><strong>Challenges</strong>, tasks that require effort but feel rewarding</li>
+          <li><strong>Feedback or rewards</strong>, recognition of progress</li>
+        </ul>
+        <p><em>Example: A workshop where teams complete missions, unlock new tasks, and compete for the best solution.</em></p>
+
+        <h3>3. The advanced definition</h3>
+        <p>Gamification is the intentional use of game design principles and motivational psychology to influence behavior and increase engagement in non-game contexts. This includes things like intrinsic motivation (curiosity, mastery, autonomy), behavioral feedback loops, challenge vs. skill balance, and social dynamics.</p>
+
+        <h2>Gamification vs. serious games</h2>
+        <p>Gamification and serious games are related but different. <strong><a href="#" class="blog-internal-link" data-target="article-content-1">Serious games</a></strong> are standalone games built from the ground up with a learning objective, like a simulation or an escape room workshop. <strong>Gamification</strong> is about taking something that already exists, like a management tool, a meeting, or a training program, and making it more engaging by adding game elements.</p>
+        <p>Think of it this way: a serious game replaces the experience entirely with a game. Gamification enhances an existing experience by tapping into how we're naturally wired, like our desire to see progress, complete challenges, and feel a sense of achievement.</p>
+
+        <h2>Want to learn more?</h2>
+        <p>Curious how gamification can work for your team or organization? <a href="/#contact">Get in touch</a> and let's explore the possibilities together.</p>
+      </div>
+      <div class="author-card">
+        <img src="assets/jeroen.jpg" alt="Jeroen van Welsenes" class="author-card__avatar">
+        <div class="author-card__info">
+          <span class="author-card__label" data-i18n="blog.author.label">Written by</span>
+          <h3 class="author-card__name">Jeroen van Welsenes</h3>
+          <p class="author-card__role" data-i18n="blog.author.role">Founder, Sidequest</p>
+          <p class="author-card__bio" data-i18n="blog.author.bio">Jeroen founded Sidequest with a simple belief: work and education should be enjoyable. We're naturally wired to learn by doing, so why not design it that way?</p>
+        </div>
+      </div>
+      <button class="blog-article__back back-to-blog">&larr; <span data-i18n="blog.back">Back to blog</span></button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="blog-footer">
+    <div class="blog-footer__inner">
+      <a href="/" class="blog-footer__logo">
+        <img src="assets/logo.svg" alt="Sidequest" />
+      </a>
+      <p class="blog-footer__copy">&copy; 2026 Sidequest. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="blog.js"></script>
+</body>
+</html>

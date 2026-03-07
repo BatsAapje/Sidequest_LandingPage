@@ -7,6 +7,7 @@ const translations = {
     'nav.how': 'How it works',
     'nav.why': 'Why this',
     'nav.signup': 'Sign up',
+    'nav.blog': 'Blog',
     'nav.cta': 'Sign up',
     // Hero
     'hero.title': 'A Scrum escape room teams will actually <em>learn</em> from',
@@ -34,6 +35,7 @@ const translations = {
     'how.tag': 'How it works',
     'how.title': 'How a session <em>works</em>',
     'how.tryMe': 'drag and drop!',
+    'how.valueLabel': 'Value delivered',
     // Thread tags
     'how.tag.a': 'Role Switching',
     'how.tag.b': 'The Challenge',
@@ -145,6 +147,7 @@ const translations = {
     'nav.how': 'Hoe het werkt',
     'nav.why': 'Waarom dit',
     'nav.signup': 'Aanmelden',
+    'nav.blog': 'Blog',
     'nav.cta': 'Aanmelden',
     // Hero
     'hero.title': 'De Scrum escape room waar je team echt van <em>leert</em>',
@@ -171,7 +174,8 @@ const translations = {
     // How
     'how.tag': 'Hoe het werkt',
     'how.title': 'Hoe een sessie <em>werkt</em>',
-    'how.tryMe': 'drag and drop!',
+    'how.tryMe': 'slepen en neerzetten!',
+    'how.valueLabel': 'Waarde geleverd',
     // Thread tags
     'how.tag.a': 'Rolwisseling',
     'how.tag.b': 'De Uitdaging',
@@ -348,10 +352,29 @@ function setLanguage(lang) {
   document.querySelectorAll('a.nav-logo').forEach(function(a) {
     a.href = prefix;
   });
+  document.querySelectorAll('a[href*="blog"]').forEach(function(a) {
+    a.href = prefix + 'blog.html';
+  });
+
+  // Update kanban card value badges for current language
+  var cv = (typeof getCardValues === 'function') ? getCardValues() : null;
+  if (cv) {
+    document.querySelectorAll('.sw-kanban__card[data-thread]').forEach(function(card) {
+      var col = card.closest('.sw-kanban__col');
+      var xpEl = card.querySelector('.sw-kanban__card-xp');
+      if (col && xpEl && cv[col.dataset.column]) {
+        xpEl.textContent = cv[col.dataset.column];
+      }
+    });
+  }
 }
 
 // ===== Game card constants =====
-const CARD_VALUES = { planned: '+10 value', progress: '+20 value', done: '+30 value' };
+const CARD_VALUES_I18N = {
+  en: { planned: '+10 value', progress: '+20 value', done: '+30 value' },
+  nl: { planned: '+10 waarde', progress: '+20 waarde', done: '+30 waarde' }
+};
+function getCardValues() { return CARD_VALUES_I18N[currentLang] || CARD_VALUES_I18N.en; }
 // Points per column for progress bar: 3 cards × 2 max each = 6 total
 const COLUMN_POINTS = { planned: 0, progress: 1, done: 2 };
 const MAX_POINTS = 6; // 3 cards × 2 points each
@@ -434,8 +457,9 @@ function updateCardContent(card, thread, newColumn) {
 
   // Update value badge
   const xpEl = card.querySelector('.sw-kanban__card-xp');
-  if (xpEl && CARD_VALUES[newColumn]) {
-    xpEl.textContent = CARD_VALUES[newColumn];
+  var cardValues = getCardValues();
+  if (xpEl && cardValues[newColumn]) {
+    xpEl.textContent = cardValues[newColumn];
   }
 }
 
