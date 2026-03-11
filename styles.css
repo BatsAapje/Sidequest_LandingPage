@@ -832,18 +832,6 @@ a {
   justify-content: center;
 }
 
-.try-me {
-  position: absolute;
-  left: calc(50% + 152px);
-  top: 20px;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
-  white-space: nowrap;
-}
-
 .cube-btn {
   position: relative;
   width: 280px;
@@ -860,8 +848,15 @@ a {
   transform: perspective(1000px) rotateX(0deg);
 }
 
-.cube-btn:hover {
+.cube-btn:hover,
+.cube-btn.is-spinning {
   transform: perspective(1000px) rotateX(360deg);
+}
+
+.cube-btn:hover .cube-face {
+  color: var(--white);
+  background: #77bccc;
+  border-color: #5ba8b8;
 }
 
 .cube-face {
@@ -884,12 +879,6 @@ a {
   box-shadow: inset 0 20px 50px rgba(113, 113, 211, 0.05);
   transition: color 0.5s, background 0.5s, border-color 0.5s;
   white-space: nowrap;
-}
-
-.cube-btn:hover .cube-face {
-  color: var(--white);
-  background: #77bccc;
-  border-color: #5ba8b8;
 }
 
 .cube-face:nth-child(1) {
@@ -2569,10 +2558,6 @@ a {
   .cube-face:nth-child(3) { transform: rotateX(180deg) translateZ(23px); }
   .cube-face:nth-child(4) { transform: rotateX(270deg) translateZ(23px); }
 
-  .try-me {
-    left: calc(50% + 110px);
-  }
-
   /* Scroll-triggered hover animations for mobile */
   .offer-card.is-hovered {
     transform: translateY(-4px);
@@ -2636,10 +2621,6 @@ a {
   .cube-face:nth-child(2) { transform: rotateX(90deg) translateZ(26px); }
   .cube-face:nth-child(3) { transform: rotateX(180deg) translateZ(26px); }
   .cube-face:nth-child(4) { transform: rotateX(270deg) translateZ(26px); }
-
-  .try-me {
-    left: calc(50% + 132px);
-  }
 
   .nav-logo img {
     height: 27px;

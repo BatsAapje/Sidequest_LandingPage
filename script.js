@@ -484,4 +484,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch(e) {}
   }
+
+  // Auto-rotate cube once after 1s delay
+  var cube = document.querySelector('.cube-btn');
+  if (cube) {
+    setTimeout(function() {
+      cube.classList.add('is-spinning');
+      setTimeout(function() {
+        cube.classList.remove('is-spinning');
+      }, 4000);
+    }, 1000);
+  }
 });
