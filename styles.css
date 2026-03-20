@@ -2759,16 +2759,6 @@ a {
   }
 }
 
-/* ===== Music Notes Background Pattern ===== */
-.offers,
-.origin,
-.benefits,
-.testimonials,
-.faq {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='280' opacity='0.06'%3E%3Ctext x='28' y='72' font-size='42' fill='%231a1a2e' transform='rotate(-14,28,72)'%3E♪%3C/text%3E%3Ctext x='155' y='48' font-size='28' fill='%231a1a2e' transform='rotate(9,155,48)'%3E♫%3C/text%3E%3Ctext x='278' y='95' font-size='36' fill='%231a1a2e' transform='rotate(-7,278,95)'%3E♩%3C/text%3E%3Ctext x='75' y='195' font-size='24' fill='%231a1a2e' transform='rotate(17,75,195)'%3E♬%3C/text%3E%3Ctext x='210' y='175' font-size='32' fill='%231a1a2e' transform='rotate(-10,210,175)'%3E♪%3C/text%3E%3Ctext x='340' y='220' font-size='21' fill='%231a1a2e' transform='rotate(12,340,220)'%3E♫%3C/text%3E%3Ctext x='358' y='52' font-size='18' fill='%231a1a2e' transform='rotate(-5,358,52)'%3E♩%3C/text%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 400px 280px;
-}
 
 /* ===== Benefit Card Scroll Animation ===== */
 .benefit-card {
