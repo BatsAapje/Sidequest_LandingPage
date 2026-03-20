@@ -495,4 +495,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 4000);
     }, 1000);
   }
+
+  // Benefit cards scroll animation (left-to-right domino effect)
+  var benefitsSection = document.querySelector('.benefits');
+  if (benefitsSection) {
+    var benefitsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.benefit-card').forEach(function(card) {
+            card.classList.add('is-visible');
+          });
+          benefitsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    benefitsObserver.observe(benefitsSection);
+  }
 });
