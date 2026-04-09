@@ -78,6 +78,14 @@ var translations = {
     'testimonials.t3.role': 'Marketing Manager',
     'testimonials.t4.company': 'You?',
 
+    // Team
+    'team.tag': 'The team',
+    'team.title': 'The people behind <em>Sidequest</em>',
+    'team.subtitle': 'A small team with big ideas.',
+    'team.jeroen.role': 'Founder',
+    'team.thomas.role': 'Developer',
+    'team.peter.role': 'Workshop Host',
+
     // FAQ
     'faq.title': 'Your questions <em>answered</em>',
     'faq.q1': 'What kind of games does Sidequest make?',
@@ -188,6 +196,14 @@ var translations = {
     'testimonials.t3.quote': '\u201CWe hadden het uren later nog steeds over de Scrum-workshop. Het was niet alleen leuk, maar echt inzichtelijk. Het hele team was van begin tot eind betrokken.\u201D',
     'testimonials.t3.role': 'Marketing Manager',
     'testimonials.t4.company': 'Jij?',
+
+    // Team
+    'team.tag': 'Het team',
+    'team.title': 'De mensen achter <em>Sidequest</em>',
+    'team.subtitle': 'Een klein team met grote idee\u00EBn — verenigd door een liefde voor games en leren.',
+    'team.jeroen.role': 'Oprichter',
+    'team.thomas.role': 'Ontwikkelaar',
+    'team.peter.role': 'Workshop Host',
 
     // FAQ
     'faq.title': 'Jouw vragen <em>beantwoord</em>',
