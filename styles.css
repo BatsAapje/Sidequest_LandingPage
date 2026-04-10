@@ -2882,6 +2882,12 @@ a {
   color: var(--gray-500);
 }
 
+.site-footer__badges {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .site-footer__inner {
     flex-direction: column;
