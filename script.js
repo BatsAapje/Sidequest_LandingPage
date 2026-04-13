@@ -86,6 +86,9 @@ var translations = {
     'team.thomas.role': 'Developer',
     'team.peter.role': 'Workshop Host',
 
+    // Featured on
+    'featured.label': 'Featured on',
+
     // FAQ
     'faq.title': 'Your questions <em>answered</em>',
     'faq.q1': 'What kind of games does Sidequest make?',
@@ -204,6 +207,9 @@ var translations = {
     'team.jeroen.role': 'Oprichter',
     'team.thomas.role': 'Ontwikkelaar',
     'team.peter.role': 'Workshop Host',
+
+    // Featured on
+    'featured.label': 'Te zien op',
 
     // FAQ
     'faq.title': 'Jouw vragen <em>beantwoord</em>',
