@@ -6,7 +6,8 @@ var currentLang = 'en';
 var translations = {
   en: {
     // Nav
-    'nav.offers': 'What we offer',
+    'nav.offers': 'What we do',
+    'nav.work': 'Our work',
     'nav.benefits': 'Benefits',
     'nav.testimonials': 'Testimonials',
     'nav.faq': 'FAQ',
@@ -25,19 +26,36 @@ var translations = {
     'hero.schedule': 'Schedule',
 
     // Offers
-    'offers.tag': 'What we offer',
+    'offers.tag': 'What we do',
     'offers.title': 'The way<br class="mobile-br"> we <em>should</em> learn<br class="mobile-br"> in the first place',
     'offers.card1.title': 'Gamified workshops',
     'offers.card1.desc': 'We turn business frameworks into interactive sessions that people actually remember.',
     'offers.card1.sessionName': 'Strategy Game Session',
     'offers.card1.sessionTime': '2:00 – 4:00 PM',
     'offers.card1.sessionLabel': 'Innovation Workshop',
-    'offers.card1.tooltip': 'See our Scrum workshop',
     'offers.card2.title': 'Tailor-made games',
     'offers.card2.desc': 'Your challenges, turned into play. Custom-designed for your team and goals.',
     'offers.card2.briefName': 'Your Brief',
     'offers.card3.title': 'Games for at home',
     'offers.card3.desc': 'Games with a purpose, designed for playful learning at home.',
+
+    // Our Work
+    'work.tag': 'Our work',
+    'work.title': 'A look at <em>what</em> we\'ve made',
+    'work.scrum.tag': 'Workshop',
+    'work.scrum.title': 'Scrum Escape Room',
+    'work.scrum.desc': 'A hands-on Scrum workshop disguised as an escape room. Teams crack puzzles in short sprints and experience the core principles of agile collaboration first-hand.',
+    'work.scrum.link': 'Learn more →',
+    'work.switchcity.tag': 'Game',
+    'work.switchcity.title': 'Switch City',
+    'work.switchcity.desc': 'A game about the energy transition. Teams manage city districts and chase their region\'s energy demand, but ignore climate change and it comes back to bite them.',
+    'work.switchcity.note': '*Originally started at Studio Kobi, now actively developed by Sidequest.',
+    'work.switchcity.link': 'Learn more →',
+    'work.switchcity.annotation': 'Accompanying dashboard',
+    'work.soon': 'Coming soon',
+    'work.placeholder.tag': 'In the works',
+    'work.placeholder.title': 'Something new',
+    'work.placeholder.desc': 'A fresh project is on the way. Stay tuned.',
 
     // Origin
     'origin.p1': 'Sidequest has its origins in 2019, when founder Jeroen used games during his master\'s studies to make complex sustainability challenges easier to understand.',
@@ -76,7 +94,9 @@ var translations = {
     'testimonials.t2.role': 'Product Owner',
     'testimonials.t3.quote': '\u201CWe were still talking about the Scrum workshop hours later. It was not only fun, but genuinely insightful. The whole team was engaged from start to finish.\u201D',
     'testimonials.t3.role': 'Marketing Manager',
-    'testimonials.t4.company': 'You?',
+    'testimonials.t4.quote': '\u201CWe had a lot of fun along the way with the Scrum Escape Room. A great example of how learning and team building can go hand in hand!\u201D',
+    'testimonials.t4.role': 'Jr. Business Developer',
+    'testimonials.t5.company': 'You?',
 
     // Team
     'team.tag': 'The team',
@@ -124,11 +144,21 @@ var translations = {
     'contact.check6': 'Something else',
     'contact.submit': 'Send a message',
     'contact.sending': 'Sending...',
-    'contact.confirmation': 'Your message has been sent!'
+    'contact.confirmation': 'Your message has been sent!',
+
+    // Footer
+    'footer.tagline': 'Serious games & gamified workshops for teams. Playful by design, serious in impact.',
+    'footer.studioHeading': 'Studio',
+    'footer.legalHeading': 'Legal',
+    'footer.contactHeading': 'Contact',
+    'footer.team': 'Team',
+    'footer.privacyPolicy': 'Privacy Policy',
+    'footer.termsOfService': 'Terms of Service'
   },
   nl: {
     // Nav
-    'nav.offers': 'Wat we bieden',
+    'nav.offers': 'Wat we doen',
+    'nav.work': 'Ons werk',
     'nav.benefits': 'Voordelen',
     'nav.testimonials': 'Referenties',
     'nav.faq': 'FAQ',
@@ -147,19 +177,36 @@ var translations = {
     'hero.schedule': 'Plannen',
 
     // Offers
-    'offers.tag': 'Wat we bieden',
+    'offers.tag': 'Wat we doen',
     'offers.title': 'De manier<br class="mobile-br"> waarop we <em>zouden moeten</em> leren',
     'offers.card1.title': 'Gegamificeerde workshops',
     'offers.card1.desc': 'Wij maken van zakelijke frameworks interactieve sessies die mensen echt onthouden.',
     'offers.card1.sessionName': 'Strategie Game Sessie',
     'offers.card1.sessionTime': '14:00 – 16:00',
     'offers.card1.sessionLabel': 'Innovatie Workshop',
-    'offers.card1.tooltip': 'Bekijk onze Scrum workshop',
     'offers.card2.title': 'Maatwerkgames',
     'offers.card2.desc': 'Jouw uitdagingen, omgezet in spel. Op maat ontworpen voor jouw team en doelen.',
     'offers.card2.briefName': 'Jouw Briefing',
     'offers.card3.title': 'Games voor thuis',
     'offers.card3.desc': 'Games met een doel, ontworpen voor speels leren thuis.',
+
+    // Our Work
+    'work.tag': 'Ons werk',
+    'work.title': 'Een kijkje in <em>wat</em> we hebben gemaakt',
+    'work.scrum.tag': 'Workshop',
+    'work.scrum.title': 'Scrum Escape Room',
+    'work.scrum.desc': 'Een hands-on Scrum-workshop verpakt als escape room. Teams kraken puzzels in korte sprints en ervaren de kernprincipes van agile samenwerking aan den lijve.',
+    'work.scrum.link': 'Lees meer →',
+    'work.switchcity.tag': 'Game',
+    'work.switchcity.title': 'Switch City',
+    'work.switchcity.desc': 'Een spel over de energietransitie. Teams beheren stadswijken en jagen op de energiebehoefte van hun regio, maar negeer klimaatverandering en het komt terug om je te bijten.',
+    'work.switchcity.note': '*Oorspronkelijk gestart bij Studio Kobi, nu actief doorontwikkeld door Sidequest.',
+    'work.switchcity.link': 'Lees meer →',
+    'work.switchcity.annotation': 'Bijbehorend dashboard',
+    'work.soon': 'Binnenkort',
+    'work.placeholder.tag': 'In de maak',
+    'work.placeholder.title': 'Iets nieuws',
+    'work.placeholder.desc': 'Er is een nieuw project op komst. Blijf op de hoogte.',
 
     // Origin
     'origin.p1': 'Sidequest vindt zijn oorsprong in 2019, toen oprichter Jeroen tijdens zijn masterstudie games gebruikte om complexe duurzaamheidsvraagstukken makkelijker te begrijpen.',
@@ -198,7 +245,9 @@ var translations = {
     'testimonials.t2.role': 'Product Owner',
     'testimonials.t3.quote': '\u201CWe hadden het uren later nog steeds over de Scrum-workshop. Het was niet alleen leuk, maar echt inzichtelijk. Het hele team was van begin tot eind betrokken.\u201D',
     'testimonials.t3.role': 'Marketing Manager',
-    'testimonials.t4.company': 'Jij?',
+    'testimonials.t4.quote': '\u201CWe hebben onderweg veel plezier gehad met de Scrum Escape Room. Een mooi voorbeeld van hoe leren en teambuilding hand in hand kunnen gaan!\u201D',
+    'testimonials.t4.role': 'Jr. Business Developer',
+    'testimonials.t5.company': 'Jij?',
 
     // Team
     'team.tag': 'Het team',
@@ -246,7 +295,16 @@ var translations = {
     'contact.check6': 'Iets anders',
     'contact.submit': 'Verstuur bericht',
     'contact.sending': 'Versturen...',
-    'contact.confirmation': 'Je bericht is verstuurd!'
+    'contact.confirmation': 'Je bericht is verstuurd!',
+
+    // Footer
+    'footer.tagline': 'Serious games & gegamificeerde workshops voor teams. Speels ontworpen, serieus in impact.',
+    'footer.studioHeading': 'Studio',
+    'footer.legalHeading': 'Juridisch',
+    'footer.contactHeading': 'Contact',
+    'footer.team': 'Team',
+    'footer.privacyPolicy': 'Privacybeleid',
+    'footer.termsOfService': 'Algemene voorwaarden'
   }
 };
 
